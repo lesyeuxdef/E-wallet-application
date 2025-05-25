@@ -19,18 +19,6 @@ public class ewallet_frame extends javax.swing.JFrame {
      */
     public ewallet_frame() {
         initComponents();
-        
-        ImageIcon originalIcon = (ImageIcon)logoLabel.getIcon();
-        if (originalIcon != null) 
-        {
-        Image scaledImage = originalIcon.getImage()
-            .getScaledInstance(80, 80, Image.SCALE_SMOOTH); // Adjust dimensions
-        logoLabel.setIcon(new ImageIcon(scaledImage));
-        }
-    
-        // Prevent label from expanding
-        logoLabel.setMaximumSize(new Dimension(80, 80));
-        logoLabel.setPreferredSize(new Dimension(80, 80));
         }
 
     /**
@@ -58,43 +46,75 @@ public class ewallet_frame extends javax.swing.JFrame {
         menuPanel = new javax.swing.JPanel();
         buttonsPanel = new javax.swing.JPanel();
         filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 50));
-        jButton1 = new javax.swing.JButton();
+        transferButton = new javax.swing.JButton();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 10));
-        jButton2 = new javax.swing.JButton();
+        depositButton = new javax.swing.JButton();
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 10));
-        jButton3 = new javax.swing.JButton();
+        accountButton = new javax.swing.JButton();
         designPanel = new javax.swing.JPanel();
         imageLabel = new javax.swing.JLabel();
+        creatorsPanel = new javax.swing.JPanel();
+        wilLabel = new javax.swing.JLabel();
+        robiLabel = new javax.swing.JLabel();
+        cliffLabel = new javax.swing.JLabel();
+        cedLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        buttonUpTop.setBackground(new java.awt.Color(102, 255, 51));
+        buttonUpTop.setBackground(new java.awt.Color(102, 102, 102));
         buttonUpTop.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         buttonUpTop.setMaximumSize(new java.awt.Dimension(32767, 100));
         buttonUpTop.setPreferredSize(new java.awt.Dimension(883, 100));
         buttonUpTop.setLayout(new java.awt.BorderLayout());
 
-        logoLabel.setText("logoLabel");
+        logoLabel.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 24)); // NOI18N
+        logoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo100x67.png"))); // NOI18N
+        logoLabel.setText("PayBuddy");
+        logoLabel.setToolTipText("");
+        logoLabel.setMaximumSize(new java.awt.Dimension(250, 63));
+        logoLabel.setMinimumSize(new java.awt.Dimension(120, 63));
+        logoLabel.setPreferredSize(new java.awt.Dimension(250, 63));
+        logoLabel.setRequestFocusEnabled(false);
         buttonUpTop.add(logoLabel, java.awt.BorderLayout.LINE_START);
 
+        headerButtonsPanel.setBackground(new java.awt.Color(102, 102, 102));
         headerButtonsPanel.setMinimumSize(new java.awt.Dimension(500, 100));
         headerButtonsPanel.setLayout(new javax.swing.BoxLayout(headerButtonsPanel, javax.swing.BoxLayout.X_AXIS));
         headerButtonsPanel.add(filler8);
 
         jButton4.setText("jButton4");
+        jButton4.setMaximumSize(new java.awt.Dimension(75, 40));
+        jButton4.setPreferredSize(new java.awt.Dimension(75, 40));
         headerButtonsPanel.add(jButton4);
         headerButtonsPanel.add(filler4);
 
-        jButton5.setText("jButton4");
+        jButton5.setText("jButton5");
+        jButton5.setMaximumSize(new java.awt.Dimension(75, 40));
         headerButtonsPanel.add(jButton5);
         headerButtonsPanel.add(filler5);
 
-        jButton6.setText("jButton4");
+        jButton6.setText("jButton6");
+        jButton6.setMaximumSize(new java.awt.Dimension(75, 40));
         headerButtonsPanel.add(jButton6);
         headerButtonsPanel.add(filler6);
 
-        jButton7.setText("jButton4");
+        jButton7.setText("Who made PayBuddy?");
+        jButton7.setMaximumSize(new java.awt.Dimension(149, 40));
+        jButton7.setPreferredSize(new java.awt.Dimension(160, 30));
         headerButtonsPanel.add(jButton7);
+        jButton7.addActionListener(e -> {
+            if(currentCard.equals("card2"))
+            {
+                jButton7.setText("Switch back?");
+            }
+            else if(currentCard.equals("card4"))
+            {
+                jButton7.setText("Who made PayBuddy?");
+            }
+            String targetCard = getPreviousCard(currentCard);
+            ((CardLayout)designPanel.getLayout()).show(designPanel, targetCard);
+            currentCard = targetCard;
+        });
         headerButtonsPanel.add(filler7);
 
         buttonUpTop.add(headerButtonsPanel, java.awt.BorderLayout.LINE_END);
@@ -103,41 +123,65 @@ public class ewallet_frame extends javax.swing.JFrame {
 
         menuPanel.setLayout(new java.awt.BorderLayout());
 
-        buttonsPanel.setBackground(new java.awt.Color(153, 255, 204));
+        buttonsPanel.setBackground(new java.awt.Color(51, 0, 0));
         buttonsPanel.setPreferredSize(new java.awt.Dimension(300, 461));
         buttonsPanel.setLayout(new javax.swing.BoxLayout(buttonsPanel, javax.swing.BoxLayout.Y_AXIS));
         buttonsPanel.add(filler3);
 
-        jButton1.setText("jButton4");
-        jButton1.setAlignmentX(0.5F);
-        jButton1.setMaximumSize(new java.awt.Dimension(120, 70));
-        jButton1.setPreferredSize(new java.awt.Dimension(75, 100));
-        buttonsPanel.add(jButton1);
+        transferButton.setFont(new java.awt.Font("UD Digi Kyokasho NK-R", 0, 18)); // NOI18N
+        transferButton.setText("Transfer");
+        transferButton.setAlignmentX(0.5F);
+        transferButton.setMaximumSize(new java.awt.Dimension(120, 70));
+        transferButton.setPreferredSize(new java.awt.Dimension(75, 100));
+        buttonsPanel.add(transferButton);
         buttonsPanel.add(filler1);
 
-        jButton2.setText("jButton4");
-        jButton2.setAlignmentX(0.5F);
-        jButton2.setMaximumSize(new java.awt.Dimension(120, 70));
-        jButton2.setPreferredSize(new java.awt.Dimension(75, 100));
-        buttonsPanel.add(jButton2);
+        depositButton.setFont(new java.awt.Font("UD Digi Kyokasho NK-R", 0, 18)); // NOI18N
+        depositButton.setText("Deposit");
+        depositButton.setAlignmentX(0.5F);
+        depositButton.setMaximumSize(new java.awt.Dimension(120, 70));
+        depositButton.setPreferredSize(new java.awt.Dimension(75, 100));
+        buttonsPanel.add(depositButton);
         buttonsPanel.add(filler2);
 
-        jButton3.setText("jButton4");
-        jButton3.setAlignmentX(0.5F);
-        jButton3.setMaximumSize(new java.awt.Dimension(120, 70));
-        jButton3.setPreferredSize(new java.awt.Dimension(75, 100));
-        buttonsPanel.add(jButton3);
+        accountButton.setFont(new java.awt.Font("UD Digi Kyokasho NK-R", 0, 18)); // NOI18N
+        accountButton.setText("Account");
+        accountButton.setAlignmentX(0.5F);
+        accountButton.setMaximumSize(new java.awt.Dimension(120, 70));
+        accountButton.setPreferredSize(new java.awt.Dimension(75, 100));
+        buttonsPanel.add(accountButton);
 
         menuPanel.add(buttonsPanel, java.awt.BorderLayout.LINE_START);
 
-        designPanel.setBackground(new java.awt.Color(255, 51, 0));
-        designPanel.setLayout(new java.awt.GridLayout(1, 1));
+        designPanel.setBackground(new java.awt.Color(102, 102, 102));
+        designPanel.setLayout(new java.awt.CardLayout());
 
         imageLabel.setBackground(new java.awt.Color(153, 0, 51));
         imageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         imageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo.png"))); // NOI18N
         imageLabel.setPreferredSize(new java.awt.Dimension(500, 546));
-        designPanel.add(imageLabel);
+        designPanel.add(imageLabel, "card2");
+
+        creatorsPanel.setBackground(new java.awt.Color(102, 102, 102));
+        creatorsPanel.setLayout(new java.awt.GridLayout(2, 2));
+
+        wilLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        wilLabel.setText("wil");
+        creatorsPanel.add(wilLabel);
+
+        robiLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        robiLabel.setText("robi");
+        creatorsPanel.add(robiLabel);
+
+        cliffLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cliffLabel.setText("cliff");
+        creatorsPanel.add(cliffLabel);
+
+        cedLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cedLabel.setText("ced");
+        creatorsPanel.add(cedLabel);
+
+        designPanel.add(creatorsPanel, "card4");
 
         menuPanel.add(designPanel, java.awt.BorderLayout.CENTER);
 
@@ -182,8 +226,13 @@ public class ewallet_frame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton accountButton;
     private javax.swing.JPanel buttonUpTop;
     private javax.swing.JPanel buttonsPanel;
+    private javax.swing.JLabel cedLabel;
+    private javax.swing.JLabel cliffLabel;
+    private javax.swing.JPanel creatorsPanel;
+    private javax.swing.JButton depositButton;
     private javax.swing.JPanel designPanel;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler2;
@@ -196,14 +245,26 @@ public class ewallet_frame extends javax.swing.JFrame {
     private javax.swing.Box.Filler filler9;
     private javax.swing.JPanel headerButtonsPanel;
     private javax.swing.JLabel imageLabel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel logoLabel;
     private javax.swing.JPanel menuPanel;
+    private javax.swing.JLabel robiLabel;
+    private javax.swing.JButton transferButton;
+    private javax.swing.JLabel wilLabel;
     // End of variables declaration//GEN-END:variables
+    
+    //my variable declarations
+    private String currentCard = "card2";
+    //end of my variable declarations
+    
+    private String getPreviousCard(String current) {
+    return switch (current) {
+        case "card4" -> "card2";
+        case "card2" -> "card4";
+        default -> "card1";
+    };
+}
 }
