@@ -4,6 +4,10 @@
  */
 package com.fab.ewallet_project;
 
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
 /**
  *
  * @author cedri
@@ -11,11 +15,23 @@ package com.fab.ewallet_project;
 public class ewallet_frame extends javax.swing.JFrame {
 
     /**
-     * Creates new form ewallet_frame
+     * Creates new form e-wallet_frame
      */
     public ewallet_frame() {
         initComponents();
-    }
+        
+        ImageIcon originalIcon = (ImageIcon)logoLabel.getIcon();
+        if (originalIcon != null) 
+        {
+        Image scaledImage = originalIcon.getImage()
+            .getScaledInstance(80, 80, Image.SCALE_SMOOTH); // Adjust dimensions
+        logoLabel.setIcon(new ImageIcon(scaledImage));
+        }
+    
+        // Prevent label from expanding
+        logoLabel.setMaximumSize(new Dimension(80, 80));
+        logoLabel.setPreferredSize(new Dimension(80, 80));
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,18 +42,106 @@ public class ewallet_frame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        filler9 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        buttonUpTop = new javax.swing.JPanel();
+        logoLabel = new javax.swing.JLabel();
+        headerButtonsPanel = new javax.swing.JPanel();
+        filler8 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(32767, 0));
+        jButton4 = new javax.swing.JButton();
+        filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(32767, 0));
+        jButton5 = new javax.swing.JButton();
+        filler5 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(32767, 0));
+        jButton6 = new javax.swing.JButton();
+        filler6 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(32767, 0));
+        jButton7 = new javax.swing.JButton();
+        filler7 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(32767, 0));
+        menuPanel = new javax.swing.JPanel();
+        buttonsPanel = new javax.swing.JPanel();
+        filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 50));
+        jButton1 = new javax.swing.JButton();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 10));
+        jButton2 = new javax.swing.JButton();
+        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 10));
+        jButton3 = new javax.swing.JButton();
+        designPanel = new javax.swing.JPanel();
+        imageLabel = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        buttonUpTop.setBackground(new java.awt.Color(102, 255, 51));
+        buttonUpTop.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        buttonUpTop.setMaximumSize(new java.awt.Dimension(32767, 100));
+        buttonUpTop.setPreferredSize(new java.awt.Dimension(883, 100));
+        buttonUpTop.setLayout(new java.awt.BorderLayout());
+
+        logoLabel.setText("logoLabel");
+        buttonUpTop.add(logoLabel, java.awt.BorderLayout.LINE_START);
+
+        headerButtonsPanel.setMinimumSize(new java.awt.Dimension(500, 100));
+        headerButtonsPanel.setLayout(new javax.swing.BoxLayout(headerButtonsPanel, javax.swing.BoxLayout.X_AXIS));
+        headerButtonsPanel.add(filler8);
+
+        jButton4.setText("jButton4");
+        headerButtonsPanel.add(jButton4);
+        headerButtonsPanel.add(filler4);
+
+        jButton5.setText("jButton4");
+        headerButtonsPanel.add(jButton5);
+        headerButtonsPanel.add(filler5);
+
+        jButton6.setText("jButton4");
+        headerButtonsPanel.add(jButton6);
+        headerButtonsPanel.add(filler6);
+
+        jButton7.setText("jButton4");
+        headerButtonsPanel.add(jButton7);
+        headerButtonsPanel.add(filler7);
+
+        buttonUpTop.add(headerButtonsPanel, java.awt.BorderLayout.LINE_END);
+
+        getContentPane().add(buttonUpTop, java.awt.BorderLayout.PAGE_START);
+
+        menuPanel.setLayout(new java.awt.BorderLayout());
+
+        buttonsPanel.setBackground(new java.awt.Color(153, 255, 204));
+        buttonsPanel.setPreferredSize(new java.awt.Dimension(300, 461));
+        buttonsPanel.setLayout(new javax.swing.BoxLayout(buttonsPanel, javax.swing.BoxLayout.Y_AXIS));
+        buttonsPanel.add(filler3);
+
+        jButton1.setText("jButton4");
+        jButton1.setAlignmentX(0.5F);
+        jButton1.setMaximumSize(new java.awt.Dimension(120, 70));
+        jButton1.setPreferredSize(new java.awt.Dimension(75, 100));
+        buttonsPanel.add(jButton1);
+        buttonsPanel.add(filler1);
+
+        jButton2.setText("jButton4");
+        jButton2.setAlignmentX(0.5F);
+        jButton2.setMaximumSize(new java.awt.Dimension(120, 70));
+        jButton2.setPreferredSize(new java.awt.Dimension(75, 100));
+        buttonsPanel.add(jButton2);
+        buttonsPanel.add(filler2);
+
+        jButton3.setText("jButton4");
+        jButton3.setAlignmentX(0.5F);
+        jButton3.setMaximumSize(new java.awt.Dimension(120, 70));
+        jButton3.setPreferredSize(new java.awt.Dimension(75, 100));
+        buttonsPanel.add(jButton3);
+
+        menuPanel.add(buttonsPanel, java.awt.BorderLayout.LINE_START);
+
+        designPanel.setBackground(new java.awt.Color(255, 51, 0));
+        designPanel.setLayout(new java.awt.GridLayout(1, 1));
+
+        imageLabel.setBackground(new java.awt.Color(153, 0, 51));
+        imageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo.png"))); // NOI18N
+        imageLabel.setPreferredSize(new java.awt.Dimension(500, 546));
+        designPanel.add(imageLabel);
+
+        menuPanel.add(designPanel, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(menuPanel, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -78,5 +182,28 @@ public class ewallet_frame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel buttonUpTop;
+    private javax.swing.JPanel buttonsPanel;
+    private javax.swing.JPanel designPanel;
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.Box.Filler filler2;
+    private javax.swing.Box.Filler filler3;
+    private javax.swing.Box.Filler filler4;
+    private javax.swing.Box.Filler filler5;
+    private javax.swing.Box.Filler filler6;
+    private javax.swing.Box.Filler filler7;
+    private javax.swing.Box.Filler filler8;
+    private javax.swing.Box.Filler filler9;
+    private javax.swing.JPanel headerButtonsPanel;
+    private javax.swing.JLabel imageLabel;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JLabel logoLabel;
+    private javax.swing.JPanel menuPanel;
     // End of variables declaration//GEN-END:variables
 }
