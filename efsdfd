@@ -1,0 +1,73 @@
+[33mcommit f6ac682bd632992ab5f41bd84ea9df2f76eaf923[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 4381eec 09e3155
+Author: lesyeuxdef <decepticonsrcool@gmail.com>
+Date:   Sun May 25 23:10:29 2025 +0800
+
+    Merge pull request #1 from lesyeuxdef/master
+    
+    merging master + main
+
+[33mcommit 09e315545bb957382d0203a2729790ade5ae9de7[m
+Author: lesyeuxdef <decepticonsrcool@gmail.com>
+Date:   Sun May 25 23:06:11 2025 +0800
+
+    pr test request
+
+[33mcommit 2a3952fcc114263b9eda880577214ce871ff2233[m
+Merge: dbe2503 4381eec
+Author: lesyeuxdef <decepticonsrcool@gmail.com>
+Date:   Sun May 25 23:05:00 2025 +0800
+
+    Merge branch 'main' of https://github.com/lesyeuxdef/E-wallet-application
+    why not coconut
+
+[33mcommit 4381eec0d65b80f10436f6e119b67fd2835aa292[m
+Author: lesyeuxdef <decepticonsrcool@gmail.com>
+Date:   Sun May 25 17:26:50 2025 +0800
+
+    added some button functionality + design change
+
+[33mcommit 6e7a17c94364712b83e99b1ca152f4b81400e0cc[m
+Author: lesyeuxdef <decepticonsrcool@gmail.com>
+Date:   Sun May 25 13:04:51 2025 +0800
+
+    added menu frame
+
+[33mcommit 8abb0274060026b0e847337073bb42bb414e7141[m
+Author: lesyeuxdef <decepticonsrcool@gmail.com>
+Date:   Sat May 24 16:39:53 2025 +0800
+
+    okay wait that was wrong
+
+[33mcommit 7565d15beecc009817251fc695707c98cf3f3b87[m
+Author: lesyeuxdef <decepticonsrcool@gmail.com>
+Date:   Sat May 24 16:38:28 2025 +0800
+
+    PROJECT FILES
+
+[33mcommit dbe2503f5caffb285dffef35226dcdfd7a0eb05d[m
+Merge: 3e9a357 513dfc7
+Author: lesyeuxdef <decepticonsrcool@gmail.com>
+Date:   Sat May 24 16:25:01 2025 +0800
+
+    Merge branch 'main' of https://github.com/lesyeuxdef/E-wallet-application
+    
+    why not coconut
+
+[33mcommit 3e9a35775cf83860cd8c0a9248310d8aa92c3b92[m
+Author: lesyeuxdef <decepticonsrcool@gmail.com>
+Date:   Sat May 24 15:55:43 2025 +0800
+
+    first commit
+
+[33mcommit 513dfc7c7a3eebb578ddfbdcecc62bb9656ee40c[m
+Author: lesyeuxdef <decepticonsrcool@gmail.com>
+Date:   Sat May 24 14:58:54 2025 +0800
+
+    Update README.md
+
+[33mcommit a8def906b5908bbc958d24392538d66e21c93486[m
+Author: lesyeuxdef <decepticonsrcool@gmail.com>
+Date:   Sat May 24 14:58:15 2025 +0800
+
+    Initial commit
