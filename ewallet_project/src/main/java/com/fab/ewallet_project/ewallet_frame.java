@@ -91,20 +91,23 @@ public class Ewallet_frame extends javax.swing.JFrame {
         headerButtonsPanel.setLayout(new javax.swing.BoxLayout(headerButtonsPanel, javax.swing.BoxLayout.X_AXIS));
         headerButtonsPanel.add(filler4);
 
-        accountName.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        accountName.setBackground(new java.awt.Color(102, 0, 0));
+        accountName.setFont(depositButton.getFont());
         accountName.setText("Hello, " + SignupFrame.userAccount.getPaybuddy().nameGetter() + "!");
         headerButtonsPanel.add(accountName);
         headerButtonsPanel.add(filler5);
 
-        accountMoney.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        accountMoney.setText("P" + SignupFrame.userAccount.getPaybuddy().moneyGetter()
+        accountMoney.setBackground(new java.awt.Color(102, 0, 0));
+        accountMoney.setFont(depositButton.getFont());
+        accountMoney.setText("- P" + SignupFrame.userAccount.getPaybuddy().moneyGetter()
         );
         headerButtonsPanel.add(accountMoney);
         headerButtonsPanel.add(filler6);
 
+        jButton7.setFont(new java.awt.Font("UD Digi Kyokasho NK-R", 0, 14)); // NOI18N
         jButton7.setText("Who made PayBuddy?");
         jButton7.setMaximumSize(new java.awt.Dimension(149, 40));
-        jButton7.setPreferredSize(new java.awt.Dimension(160, 30));
+        jButton7.setPreferredSize(new java.awt.Dimension(200, 30));
         headerButtonsPanel.add(jButton7);
         jButton7.addActionListener(e -> {
             if(currentCard.equals("card2"))
@@ -127,7 +130,7 @@ public class Ewallet_frame extends javax.swing.JFrame {
 
         menuPanel.setLayout(new java.awt.BorderLayout());
 
-        buttonsPanel.setBackground(new java.awt.Color(102, 0, 0));
+        buttonsPanel.setBackground(new java.awt.Color(51, 51, 51));
         buttonsPanel.setPreferredSize(new java.awt.Dimension(300, 461));
         buttonsPanel.setLayout(new javax.swing.BoxLayout(buttonsPanel, javax.swing.BoxLayout.Y_AXIS));
         buttonsPanel.add(filler3);
