@@ -8,7 +8,7 @@ package com.fab.ewallet_project;
  *
  * @author cedri
  */
-interface e_walletFunctions
+interface E_walletFunctions
 {
     void transfer();
     void deposit();

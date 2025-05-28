@@ -223,7 +223,8 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                       <Connection component="signupButton" name="font" type="property"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Cancel"/>
+                    <Property name="text" type="java.lang.String" value="CANCEL"/>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="alignmentX" type="float" value="0.5"/>
                   </Properties>
                   <AuxValues>
@@ -374,7 +375,9 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="signupButtonActionPerformed"/>
                   </Events>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="signupButton.addActionListener(e -&gt;&#xd;&#xa;{&#xd;&#xa;    javax.swing.JOptionPane.showMessageDialog(null,&quot;Signed up!&quot;,&quot;&quot;,javax.swing.JOptionPane.INFORMATION_MESSAGE);&#xd;&#xa;    paybuddy paybuddyObj = new paybuddy(usernameField.getText(),emailField.getText(),numberField.getText(),passwordField.getText());&#xd;&#xa;});"/>
+                    <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="signupButton.addActionListener(f -&gt;&#xd;&#xa;{&#xd;&#xa;    paybud = new paybuddy(usernameField.getText(),emailField.getText(),numberField.getText(),passwordField.getText());&#xd;&#xa;    userAccount = new paybuddyAccount(paybud);&#xd;&#xa;    javax.swing.JOptionPane.showMessageDialog(null, &quot;Signed up! Opening menu&quot;, &quot;&quot;, javax.swing.JOptionPane.INFORMATION_MESSAGE);&#xd;&#xa;    &#xd;&#xa;    dispose();&#xd;&#xa;&#xd;&#xa;    new Ewallet_frame().setVisible(true);&#xd;&#xa;});"/>
+                    <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
                   </AuxValues>
                 </Component>
                 <Component class="javax.swing.Box$Filler" name="filler9">
