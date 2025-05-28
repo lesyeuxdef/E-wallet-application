@@ -51,6 +51,8 @@ public class ewallet_frame extends javax.swing.JFrame {
         depositButton = new javax.swing.JButton();
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 10));
         accountButton = new javax.swing.JButton();
+        filler10 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 100), new java.awt.Dimension(0, 100), new java.awt.Dimension(0, 100));
+        accountButton1 = new javax.swing.JButton();
         designPanel = new javax.swing.JPanel();
         imageLabel = new javax.swing.JLabel();
         creatorsPanel = new javax.swing.JPanel();
@@ -150,45 +152,58 @@ public class ewallet_frame extends javax.swing.JFrame {
         accountButton.setMaximumSize(new java.awt.Dimension(120, 70));
         accountButton.setPreferredSize(new java.awt.Dimension(75, 100));
         buttonsPanel.add(accountButton);
+        buttonsPanel.add(filler10);
 
-        menuPanel.add(buttonsPanel, java.awt.BorderLayout.LINE_START);
+        accountButton1.setBackground(new java.awt.Color(255, 153, 153));
+        accountButton1.setFont(new java.awt.Font("UD Digi Kyokasho NK-R", 0, 18)); // NOI18N
+        accountButton1.setText("Exit");
+        accountButton1.setAlignmentX(0.5F);
+        accountButton1.setMaximumSize(new java.awt.Dimension(120, 70));
+        accountButton1.setPreferredSize(new java.awt.Dimension(75, 100));
+        buttonsPanel.add(accountButton1);
+        accountButton1.addActionListener(e ->
+            {
+                System.exit(0);
+            });
 
-        designPanel.setBackground(new java.awt.Color(102, 102, 102));
-        designPanel.setLayout(new java.awt.CardLayout());
+            menuPanel.add(buttonsPanel, java.awt.BorderLayout.LINE_START);
 
-        imageLabel.setBackground(new java.awt.Color(153, 0, 51));
-        imageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo.png"))); // NOI18N
-        imageLabel.setPreferredSize(new java.awt.Dimension(500, 546));
-        designPanel.add(imageLabel, "card2");
+            designPanel.setBackground(new java.awt.Color(102, 102, 102));
+            designPanel.setLayout(new java.awt.CardLayout());
 
-        creatorsPanel.setBackground(new java.awt.Color(102, 102, 102));
-        creatorsPanel.setLayout(new java.awt.GridLayout(2, 2));
+            imageLabel.setBackground(new java.awt.Color(153, 0, 51));
+            imageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            imageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo.png"))); // NOI18N
+            imageLabel.setPreferredSize(new java.awt.Dimension(500, 546));
+            designPanel.add(imageLabel, "card2");
 
-        wilLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        wilLabel.setText("wil");
-        creatorsPanel.add(wilLabel);
+            creatorsPanel.setBackground(new java.awt.Color(102, 102, 102));
+            creatorsPanel.setLayout(new java.awt.GridLayout(2, 2));
 
-        robiLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        robiLabel.setText("robi");
-        creatorsPanel.add(robiLabel);
+            wilLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            wilLabel.setText("wil");
+            creatorsPanel.add(wilLabel);
 
-        cliffLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        cliffLabel.setText("cliff");
-        creatorsPanel.add(cliffLabel);
+            robiLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            robiLabel.setText("robi");
+            creatorsPanel.add(robiLabel);
 
-        cedLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        cedLabel.setText("ced");
-        creatorsPanel.add(cedLabel);
+            cliffLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            cliffLabel.setText("cliff");
+            creatorsPanel.add(cliffLabel);
 
-        designPanel.add(creatorsPanel, "card4");
+            cedLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            cedLabel.setText("ced");
+            creatorsPanel.add(cedLabel);
 
-        menuPanel.add(designPanel, java.awt.BorderLayout.CENTER);
+            designPanel.add(creatorsPanel, "card4");
 
-        getContentPane().add(menuPanel, java.awt.BorderLayout.CENTER);
+            menuPanel.add(designPanel, java.awt.BorderLayout.CENTER);
 
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
+            getContentPane().add(menuPanel, java.awt.BorderLayout.CENTER);
+
+            pack();
+        }// </editor-fold>//GEN-END:initComponents
 
     /**
      * @param args the command line arguments
@@ -227,6 +242,7 @@ public class ewallet_frame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton accountButton;
+    private javax.swing.JButton accountButton1;
     private javax.swing.JPanel buttonUpTop;
     private javax.swing.JPanel buttonsPanel;
     private javax.swing.JLabel cedLabel;
@@ -235,6 +251,7 @@ public class ewallet_frame extends javax.swing.JFrame {
     private javax.swing.JButton depositButton;
     private javax.swing.JPanel designPanel;
     private javax.swing.Box.Filler filler1;
+    private javax.swing.Box.Filler filler10;
     private javax.swing.Box.Filler filler2;
     private javax.swing.Box.Filler filler3;
     private javax.swing.Box.Filler filler4;
@@ -266,5 +283,7 @@ public class ewallet_frame extends javax.swing.JFrame {
         case "card2" -> "card4";
         default -> "card1";
     };
+    
+    
 }
 }
