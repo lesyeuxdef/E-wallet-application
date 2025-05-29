@@ -11,6 +11,9 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="title" type="java.lang.String" value="SIGN UP ON PAYBUDDY"/>
+    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+      <Color id="Default Cursor"/>
+    </Property>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[621, 400]"/>
     </Property>
@@ -274,7 +277,6 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="usernameField">
                   <Properties>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[64, 20]"/>
                     </Property>
@@ -298,7 +300,6 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="emailField">
                   <Properties>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[64, 20]"/>
                     </Property>
@@ -322,7 +323,6 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="numberField">
                   <Properties>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[64, 20]"/>
                     </Property>
@@ -373,7 +373,7 @@
                 <Component class="javax.swing.JButton" name="showpassBut">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="99" red="99" type="rgb"/>
+                      <Color blue="cc" green="cc" red="cc" type="rgb"/>
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI Historic" size="12" style="0"/>
