@@ -11,6 +11,6 @@ package com.fab.ewallet_project;
 interface E_walletFunctions
 {
     void transfer();
-    void deposit();
+    void deposit(Ewallet_frame f);
     void account();
 }

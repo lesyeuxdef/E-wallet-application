@@ -55,36 +55,51 @@ public class Ewallet_frame extends javax.swing.JFrame {
         filler10 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 100), new java.awt.Dimension(0, 100), new java.awt.Dimension(0, 100));
         accountButton1 = new javax.swing.JButton();
         designPanel = new javax.swing.JPanel();
+        imageLabel = new javax.swing.JLabel();
         creatorsPanel = new javax.swing.JPanel();
         wilLabel = new javax.swing.JLabel();
         robiLabel = new javax.swing.JLabel();
         cliffLabel = new javax.swing.JLabel();
         cedLabel = new javax.swing.JLabel();
         transferPanel = new javax.swing.JPanel();
+        transferPanelTitle = new javax.swing.JPanel();
+        accDetailsPanel2 = new javax.swing.JLabel();
+        transferLeftPurplePanel = new javax.swing.JPanel();
+        transferRightPurplePanel = new javax.swing.JPanel();
+        transferMainPanel = new javax.swing.JPanel();
+        transfereePanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         despositPanel = new javax.swing.JPanel();
-        Deposit_Top_Border = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        Deposit_Main_Panel = new javax.swing.JPanel();
-        Enter_Amounr_Label = new javax.swing.JLabel();
-        Deposit_Amount = new javax.swing.JTextField();
+        depositPanelTitle = new javax.swing.JPanel();
+        accDetailsPanel1 = new javax.swing.JLabel();
+        depositLeftPurplePanel = new javax.swing.JPanel();
+        depositRightPurplePanel = new javax.swing.JPanel();
+        depositMainLabel = new javax.swing.JPanel();
+        depositQuestionPanel = new javax.swing.JPanel();
+        depositQuestionLabel = new javax.swing.JLabel();
+        amountField = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        actualDepositButton = new javax.swing.JButton();
         accountPanel = new javax.swing.JPanel();
         accountTopBorder = new javax.swing.JPanel();
         accDetailsPanel = new javax.swing.JLabel();
         accountMainPanel = new javax.swing.JPanel();
         accNamePanel = new javax.swing.JPanel();
         accNameLabel = new javax.swing.JLabel();
-        accEmailPanel = new javax.swing.JPanel();
         accEmailLabel = new javax.swing.JLabel();
+        accNamePanel1 = new javax.swing.JPanel();
+        accNumberLabel = new javax.swing.JLabel();
+        accPasswordLabel = new javax.swing.JLabel();
+        passwordPanel = new javax.swing.JPanel();
+        accountShowPasswordBut = new javax.swing.JButton();
         accNumPanel = new javax.swing.JPanel();
-        Account_Label_Number = new javax.swing.JLabel();
+        accountLogo = new javax.swing.JLabel();
         accPwPanel = new javax.swing.JPanel();
-        Account_Label_Password = new javax.swing.JLabel();
         deletePanel = new javax.swing.JPanel();
         deleteButton = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
+        rightPurplePanel = new javax.swing.JPanel();
         leftPurplePanel = new javax.swing.JPanel();
-        imageLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Paybuddy");
@@ -194,11 +209,6 @@ public class Ewallet_frame extends javax.swing.JFrame {
             depositButton.setAlignmentX(0.5F);
             depositButton.setMaximumSize(new java.awt.Dimension(120, 70));
             depositButton.setPreferredSize(new java.awt.Dimension(75, 100));
-            depositButton.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    depositButtonActionPerformed(evt);
-                }
-            });
             buttonsPanel.add(depositButton);
             depositButton.addActionListener(e ->
                 {
@@ -236,6 +246,12 @@ public class Ewallet_frame extends javax.swing.JFrame {
                         designPanel.setBackground(new java.awt.Color(102, 102, 102));
                         designPanel.setLayout(new java.awt.CardLayout());
 
+                        imageLabel.setBackground(new java.awt.Color(153, 0, 51));
+                        imageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                        imageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo.png"))); // NOI18N
+                        imageLabel.setPreferredSize(new java.awt.Dimension(500, 546));
+                        designPanel.add(imageLabel, "card2");
+
                         creatorsPanel.setBackground(new java.awt.Color(102, 102, 102));
                         creatorsPanel.setLayout(new java.awt.GridLayout(2, 2));
 
@@ -258,210 +274,324 @@ public class Ewallet_frame extends javax.swing.JFrame {
                         designPanel.add(creatorsPanel, "card4");
 
                         transferPanel.setBackground(new java.awt.Color(255, 255, 255));
+                        transferPanel.setLayout(new java.awt.BorderLayout());
 
-                        jLabel1.setText("transfer");
-                        transferPanel.add(jLabel1);
+                        transferPanelTitle.setBackground(new java.awt.Color(204, 204, 255));
+                        transferPanelTitle.setPreferredSize(new java.awt.Dimension(50, 100));
+                        transferPanelTitle.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 30));
+
+                        accDetailsPanel2.setBackground(new java.awt.Color(153, 102, 255));
+                        accDetailsPanel2.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
+                        accDetailsPanel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                        accDetailsPanel2.setText("Transfer");
+                        accDetailsPanel2.setAlignmentY(0.0F);
+                        accDetailsPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+                        accDetailsPanel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+                        accDetailsPanel2.setOpaque(true);
+                        accDetailsPanel2.setPreferredSize(new java.awt.Dimension(300, 50));
+                        transferPanelTitle.add(accDetailsPanel2);
+
+                        transferPanel.add(transferPanelTitle, java.awt.BorderLayout.PAGE_START);
+
+                        transferLeftPurplePanel.setBackground(new java.awt.Color(204, 204, 255));
+                        transferLeftPurplePanel.setPreferredSize(new java.awt.Dimension(100, 10));
+                        transferPanel.add(transferLeftPurplePanel, java.awt.BorderLayout.LINE_START);
+
+                        transferRightPurplePanel.setBackground(new java.awt.Color(204, 204, 255));
+                        transferRightPurplePanel.setPreferredSize(new java.awt.Dimension(100, 100));
+                        transferPanel.add(transferRightPurplePanel, java.awt.BorderLayout.LINE_END);
+
+                        transferMainPanel.setLayout(new javax.swing.BoxLayout(transferMainPanel, javax.swing.BoxLayout.Y_AXIS));
+
+                        jLabel1.setText("Enter the recipient's phone number: ");
+                        jLabel1.setAlignmentX(0.5F);
+                        transfereePanel.add(jLabel1);
+
+                        jTextField1.setColumns(20);
+                        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                jTextField1ActionPerformed(evt);
+                            }
+                        });
+                        transfereePanel.add(jTextField1);
+
+                        transferMainPanel.add(transfereePanel);
+
+                        transferPanel.add(transferMainPanel, java.awt.BorderLayout.CENTER);
 
                         designPanel.add(transferPanel, "card5");
 
                         despositPanel.setBackground(new java.awt.Color(255, 255, 255));
                         despositPanel.setLayout(new java.awt.BorderLayout());
 
-                        Deposit_Top_Border.setBackground(new java.awt.Color(204, 204, 255));
-                        Deposit_Top_Border.setPreferredSize(new java.awt.Dimension(100, 200));
+                        depositPanelTitle.setBackground(new java.awt.Color(204, 204, 255));
+                        depositPanelTitle.setPreferredSize(new java.awt.Dimension(50, 100));
+                        depositPanelTitle.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 30));
 
-                        jLabel2.setBackground(new java.awt.Color(153, 51, 255));
-                        jLabel2.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-                        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                        jLabel2.setText("Deposit");
-                        jLabel2.setAlignmentY(0.0F);
-                        jLabel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-                        jLabel2.setOpaque(true);
-                        jLabel2.setPreferredSize(new java.awt.Dimension(200, 40));
-                        Deposit_Top_Border.add(jLabel2);
+                        accDetailsPanel1.setBackground(new java.awt.Color(153, 102, 255));
+                        accDetailsPanel1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
+                        accDetailsPanel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                        accDetailsPanel1.setText("Deposit");
+                        accDetailsPanel1.setAlignmentY(0.0F);
+                        accDetailsPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+                        accDetailsPanel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+                        accDetailsPanel1.setOpaque(true);
+                        accDetailsPanel1.setPreferredSize(new java.awt.Dimension(300, 50));
+                        depositPanelTitle.add(accDetailsPanel1);
 
-                        despositPanel.add(Deposit_Top_Border, java.awt.BorderLayout.PAGE_START);
+                        despositPanel.add(depositPanelTitle, java.awt.BorderLayout.PAGE_START);
 
-                        Deposit_Main_Panel.setBackground(new java.awt.Color(204, 204, 255));
-                        Deposit_Main_Panel.setAlignmentX(0.0F);
-                        Deposit_Main_Panel.setAlignmentY(0.0F);
+                        depositLeftPurplePanel.setBackground(new java.awt.Color(204, 204, 255));
+                        depositLeftPurplePanel.setPreferredSize(new java.awt.Dimension(100, 100));
+                        despositPanel.add(depositLeftPurplePanel, java.awt.BorderLayout.LINE_START);
 
-                        Enter_Amounr_Label.setBackground(new java.awt.Color(153, 0, 255));
-                        Enter_Amounr_Label.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
-                        Enter_Amounr_Label.setText("Enter Amount:");
-                        Enter_Amounr_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-                        Enter_Amounr_Label.setOpaque(true);
-                        Enter_Amounr_Label.setPreferredSize(new java.awt.Dimension(150, 30));
-                        Deposit_Main_Panel.add(Enter_Amounr_Label);
+                        depositRightPurplePanel.setBackground(new java.awt.Color(204, 204, 255));
+                        depositRightPurplePanel.setPreferredSize(new java.awt.Dimension(100, 100));
+                        despositPanel.add(depositRightPurplePanel, java.awt.BorderLayout.LINE_END);
 
-                        Deposit_Amount.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-                        Deposit_Amount.setPreferredSize(new java.awt.Dimension(100, 25));
-                        Deposit_Main_Panel.add(Deposit_Amount);
+                        depositMainLabel.setLayout(new javax.swing.BoxLayout(depositMainLabel, javax.swing.BoxLayout.Y_AXIS));
 
-                        despositPanel.add(Deposit_Main_Panel, java.awt.BorderLayout.CENTER);
+                        depositQuestionPanel.setMaximumSize(new java.awt.Dimension(2147483647, 30000));
+                        depositQuestionPanel.setLayout(new java.awt.GridBagLayout());
 
-                        designPanel.add(despositPanel, "card6");
+                        depositQuestionLabel.setFont(new java.awt.Font("UD Digi Kyokasho NK-B", 0, 24)); // NOI18N
+                        depositQuestionLabel.setText("Amount to deposit: ");
+                        depositQuestionPanel.add(depositQuestionLabel, new java.awt.GridBagConstraints());
 
-                        accountPanel.setLayout(new java.awt.BorderLayout());
+                        amountField.setColumns(20);
+                        amountField.setPreferredSize(new java.awt.Dimension(234, 40));
+                        amountField.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                amountFieldActionPerformed(evt);
+                            }
+                        });
+                        depositQuestionPanel.add(amountField, new java.awt.GridBagConstraints());
 
-                        accountTopBorder.setBackground(new java.awt.Color(204, 204, 255));
-                        accountTopBorder.setPreferredSize(new java.awt.Dimension(100, 100));
-                        accountTopBorder.setLayout(new java.awt.GridBagLayout());
+                        depositMainLabel.add(depositQuestionPanel);
 
-                        accDetailsPanel.setBackground(new java.awt.Color(153, 102, 255));
-                        accDetailsPanel.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
-                        accDetailsPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                        accDetailsPanel.setText("Account Details");
-                        accDetailsPanel.setAlignmentY(0.0F);
-                        accDetailsPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-                        accDetailsPanel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-                        accDetailsPanel.setOpaque(true);
-                        accDetailsPanel.setPreferredSize(new java.awt.Dimension(300, 50));
-                        accountTopBorder.add(accDetailsPanel, new java.awt.GridBagConstraints());
+                        jPanel1.setMaximumSize(new java.awt.Dimension(32767, 10000));
+                        jPanel1.setLayout(new java.awt.GridBagLayout());
 
-                        accountPanel.add(accountTopBorder, java.awt.BorderLayout.PAGE_START);
-
-                        accountMainPanel.setBackground(new java.awt.Color(255, 255, 255));
-                        accountMainPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 102, 255), 2));
-                        accountMainPanel.setLayout(new javax.swing.BoxLayout(accountMainPanel, javax.swing.BoxLayout.Y_AXIS));
-
-                        accNamePanel.setBackground(new java.awt.Color(255, 255, 255));
-
-                        accNameLabel.setBackground(new java.awt.Color(255, 255, 255));
-                        accNameLabel.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-                        accNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                        accNameLabel.setText("Account Name");
-                        accNameLabel.setAlignmentY(0.0F);
-                        accNameLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 51, 255), 2));
-                        accNameLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-                        accNameLabel.setOpaque(true);
-                        accNameLabel.setPreferredSize(new java.awt.Dimension(250, 30));
-                        if(SignupFrame.userAccount != null && SignupFrame.userAccount.getPaybuddy() != null) 
-                        {
-                            accNameLabel.setText("Account name: " + SignupFrame.userAccount.getPaybuddy().nameGetter());
-                        }
-                        else
-                        {
-                            accNameLabel.setText("Guest");
-                        }
-                        accNamePanel.add(accNameLabel);
-
-                        accountMainPanel.add(accNamePanel);
-
-                        accEmailPanel.setBackground(new java.awt.Color(255, 255, 255));
-
-                        accEmailLabel.setBackground(new java.awt.Color(255, 255, 255));
-                        accEmailLabel.setFont(accNameLabel.getFont());
-                        accEmailLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                        accEmailLabel.setText("Account Email");
-                        accEmailLabel.setAlignmentY(0.0F);
-                        accEmailLabel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 51, 255), 2, true));
-                        accEmailLabel.setOpaque(true);
-                        accEmailLabel.setPreferredSize(new java.awt.Dimension(250, 30));
-                        if(SignupFrame.userAccount != null && SignupFrame.userAccount.getPaybuddy() != null)
-                        {
-                            accEmailLabel.setText("Account Email: " + SignupFrame.userAccount.getPaybuddy().emailGetter());
-                        }
-                        else
-                        {
-                            accEmailLabel.setText("Guest");
-                        }
-                        accEmailPanel.add(accEmailLabel);
-
-                        accountMainPanel.add(accEmailPanel);
-
-                        accNumPanel.setBackground(new java.awt.Color(255, 255, 255));
-
-                        Account_Label_Number.setBackground(new java.awt.Color(255, 255, 255));
-                        Account_Label_Number.setFont(accNameLabel.getFont());
-                        Account_Label_Number.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                        Account_Label_Number.setText("Account Number");
-                        Account_Label_Number.setToolTipText("");
-                        Account_Label_Number.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-                        Account_Label_Number.setDoubleBuffered(true);
-                        Account_Label_Number.setOpaque(true);
-                        Account_Label_Number.setPreferredSize(new java.awt.Dimension(250, 30));
-                        if(SignupFrame.userAccount != null && SignupFrame.userAccount.getPaybuddy() != null)
-                        {
-                            Account_Label_Number.setText("Account Number: " + SignupFrame.userAccount.getPaybuddy().numberGetter());
-                        }
-                        else
-                        {
-                            Account_Label_Number.setText("Guest Number");
-                        }
-                        accNumPanel.add(Account_Label_Number);
-
-                        accountMainPanel.add(accNumPanel);
-
-                        accPwPanel.setBackground(new java.awt.Color(255, 255, 255));
-
-                        Account_Label_Password.setBackground(new java.awt.Color(255, 255, 255));
-                        Account_Label_Password.setFont(accNameLabel.getFont());
-                        Account_Label_Password.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                        Account_Label_Password.setText("Password");
-                        Account_Label_Password.setAlignmentY(0.0F);
-                        Account_Label_Password.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-                        Account_Label_Password.setOpaque(true);
-                        Account_Label_Password.setPreferredSize(new java.awt.Dimension(250, 30));
-                        if(SignupFrame.userAccount != null && SignupFrame.userAccount.getPaybuddy() != null)
-                        {
-                            Account_Label_Password.setText("Account Email: " + SignupFrame.userAccount.getPaybuddy().pwGetter());
-                        }
-                        else
-                        {
-                            Account_Label_Password.setText("Guest Password");
-                        }
-                        accPwPanel.add(Account_Label_Password);
-
-                        accountMainPanel.add(accPwPanel);
-
-                        deletePanel.setBackground(new java.awt.Color(255, 255, 255));
-                        deletePanel.setPreferredSize(new java.awt.Dimension(138, 50));
-                        deletePanel.setLayout(new javax.swing.BoxLayout(deletePanel, javax.swing.BoxLayout.Y_AXIS));
-
-                        deleteButton.setBackground(new java.awt.Color(153, 51, 255));
-                        deleteButton.setFont(new java.awt.Font("UD Digi Kyokasho NK-B", 0, 14)); // NOI18N
-                        deleteButton.setText("Perish account");
-                        deleteButton.setAlignmentX(0.5F);
-                        deleteButton.addActionListener(f ->
+                        actualDepositButton.setFont(deleteButton.getFont());
+                        actualDepositButton.setText("Deposit");
+                        actualDepositButton.setAlignmentX(0.5F);
+                        actualDepositButton.setPreferredSize(new java.awt.Dimension(100, 40));
+                        actualDepositButton.addActionListener(f ->
                             {
-                                dispose();
-                                new SignupFrame().setVisible(true);
+                                if(amountField.getText().equals(""))
+                                {
+                                    javax.swing.JOptionPane.showMessageDialog(null,"Please enter an amount!","",javax.swing.JOptionPane.WARNING_MESSAGE);
+                                }
+                                else if(!amountField.getText().matches("\\d*"))
+                                {
+                                    javax.swing.JOptionPane.showMessageDialog(null,"Enter a number please!","",javax.swing.JOptionPane.WARNING_MESSAGE);
+                                }
+                                else if(SignupFrame.userAccount != null && SignupFrame.userAccount.getPaybuddy() != null)
+                                {   
+                                    javax.swing.JOptionPane.showConfirmDialog(null,"Successfully deposited amounted!","",javax.swing.JOptionPane.OK_CANCEL_OPTION);
+                                    SignupFrame.userAccount.getPaybuddy().deposit(this);
+                                }
+
                             });
-                            deletePanel.add(deleteButton);
+                            jPanel1.add(actualDepositButton, new java.awt.GridBagConstraints());
 
-                            accountMainPanel.add(deletePanel);
+                            depositMainLabel.add(jPanel1);
 
-                            accountPanel.add(accountMainPanel, java.awt.BorderLayout.CENTER);
+                            despositPanel.add(depositMainLabel, java.awt.BorderLayout.CENTER);
 
-                            jPanel5.setBackground(new java.awt.Color(204, 204, 255));
-                            jPanel5.setMinimumSize(new java.awt.Dimension(100, 10));
-                            jPanel5.setPreferredSize(new java.awt.Dimension(100, 10));
-                            accountPanel.add(jPanel5, java.awt.BorderLayout.LINE_END);
+                            designPanel.add(despositPanel, "card6");
 
-                            leftPurplePanel.setBackground(new java.awt.Color(204, 204, 255));
-                            leftPurplePanel.setPreferredSize(new java.awt.Dimension(100, 10));
-                            accountPanel.add(leftPurplePanel, java.awt.BorderLayout.LINE_START);
+                            accountPanel.setLayout(new java.awt.BorderLayout());
 
-                            designPanel.add(accountPanel, "card7");
+                            accountTopBorder.setBackground(new java.awt.Color(204, 204, 255));
+                            accountTopBorder.setPreferredSize(new java.awt.Dimension(100, 100));
+                            accountTopBorder.setLayout(new java.awt.GridBagLayout());
 
-                            imageLabel.setBackground(new java.awt.Color(153, 0, 51));
-                            imageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                            imageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo.png"))); // NOI18N
-                            imageLabel.setPreferredSize(new java.awt.Dimension(500, 546));
-                            designPanel.add(imageLabel, "card2");
+                            accDetailsPanel.setBackground(new java.awt.Color(153, 102, 255));
+                            accDetailsPanel.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
+                            accDetailsPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                            accDetailsPanel.setText("Account Details");
+                            accDetailsPanel.setAlignmentY(0.0F);
+                            accDetailsPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+                            accDetailsPanel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+                            accDetailsPanel.setOpaque(true);
+                            accDetailsPanel.setPreferredSize(new java.awt.Dimension(300, 50));
+                            accountTopBorder.add(accDetailsPanel, new java.awt.GridBagConstraints());
 
-                            menuPanel.add(designPanel, java.awt.BorderLayout.CENTER);
+                            accountPanel.add(accountTopBorder, java.awt.BorderLayout.PAGE_START);
 
-                            getContentPane().add(menuPanel, java.awt.BorderLayout.CENTER);
+                            accountMainPanel.setBackground(new java.awt.Color(255, 255, 255));
+                            accountMainPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 102, 255), 2));
+                            accountMainPanel.setLayout(new javax.swing.BoxLayout(accountMainPanel, javax.swing.BoxLayout.Y_AXIS));
 
-                            pack();
-                            setLocationRelativeTo(null);
-                        }// </editor-fold>//GEN-END:initComponents
+                            accNamePanel.setBackground(new java.awt.Color(255, 255, 255));
 
-    private void depositButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_depositButtonActionPerformed
+                            accNameLabel.setBackground(new java.awt.Color(255, 255, 255));
+                            accNameLabel.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+                            accNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                            accNameLabel.setText("Account Name");
+                            accNameLabel.setAlignmentY(0.0F);
+                            accNameLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 51, 255), 2));
+                            accNameLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+                            accNameLabel.setOpaque(true);
+                            accNameLabel.setPreferredSize(new java.awt.Dimension(250, 30));
+                            if(SignupFrame.userAccount != null && SignupFrame.userAccount.getPaybuddy() != null) 
+                            {
+                                accNameLabel.setText("Account name: " + SignupFrame.userAccount.getPaybuddy().nameGetter());
+                            }
+                            else
+                            {
+                                accNameLabel.setText("Guest");
+                            }
+                            accNamePanel.add(accNameLabel);
+
+                            accEmailLabel.setBackground(new java.awt.Color(255, 255, 255));
+                            accEmailLabel.setFont(accNameLabel.getFont());
+                            accEmailLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                            accEmailLabel.setText("Account Email");
+                            accEmailLabel.setAlignmentY(0.0F);
+                            accEmailLabel.setBorder(accNameLabel.getBorder());
+                            accEmailLabel.setOpaque(true);
+                            accEmailLabel.setPreferredSize(new java.awt.Dimension(250, 30));
+                            if(SignupFrame.userAccount != null && SignupFrame.userAccount.getPaybuddy() != null)
+                            {
+                                accEmailLabel.setText("Account Email: " + SignupFrame.userAccount.getPaybuddy().emailGetter());
+                            }
+                            else
+                            {
+                                accEmailLabel.setText("Guest");
+                            }
+                            accNamePanel.add(accEmailLabel);
+
+                            accountMainPanel.add(accNamePanel);
+
+                            accNamePanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+                            accNumberLabel.setBackground(new java.awt.Color(255, 255, 255));
+                            accNumberLabel.setFont(accNameLabel.getFont());
+                            accNumberLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                            accNumberLabel.setText("Account Number");
+                            accNumberLabel.setToolTipText("");
+                            accNumberLabel.setBorder(accNameLabel.getBorder());
+                            accNumberLabel.setDoubleBuffered(true);
+                            accNumberLabel.setOpaque(true);
+                            accNumberLabel.setPreferredSize(new java.awt.Dimension(250, 30));
+                            if(SignupFrame.userAccount != null && SignupFrame.userAccount.getPaybuddy() != null)
+                            {
+                                accNumberLabel.setText("Account Number: " + SignupFrame.userAccount.getPaybuddy().numberGetter());
+                            }
+                            else
+                            {
+                                accNumberLabel.setText("Guest Number");
+                            }
+                            accNamePanel1.add(accNumberLabel);
+
+                            accPasswordLabel.setBackground(new java.awt.Color(255, 255, 255));
+                            accPasswordLabel.setFont(accNameLabel.getFont());
+                            accPasswordLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                            accPasswordLabel.setText("Account Password");
+                            accPasswordLabel.setAlignmentY(0.0F);
+                            accPasswordLabel.setBorder(accNameLabel.getBorder());
+                            accPasswordLabel.setOpaque(true);
+                            accPasswordLabel.setPreferredSize(new java.awt.Dimension(250, 30));
+                            if(SignupFrame.userAccount != null && SignupFrame.userAccount.getPaybuddy() != null)
+                            {
+                                accPasswordLabel.setText("*".repeat(accPasswordLabel.getText().length()));
+                            }
+                            else
+                            {
+                                accPasswordLabel.setText("N/A");
+                            }
+                            accNamePanel1.add(accPasswordLabel);
+
+                            accountMainPanel.add(accNamePanel1);
+
+                            passwordPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+                            accountShowPasswordBut.setBackground(new java.awt.Color(153, 153, 255));
+                            accountShowPasswordBut.setText("Show password?");
+                            accountShowPasswordBut.addActionListener(f ->
+                                {
+                                    if(accountShowPasswordBut.getText().equals("Show password?"))
+                                    {
+                                        accountShowPasswordBut.setText("Hide password?");
+                                        accPasswordLabel.setText("Account Password: " + SignupFrame.userAccount.getPaybuddy().pwGetter());
+                                    }
+                                    else
+                                    {
+                                        accountShowPasswordBut.setText("Show password?");
+                                        accPasswordLabel.setText("*".repeat(accPasswordLabel.getText().length()));
+                                    }
+                                });
+                                accountShowPasswordBut.addActionListener(new java.awt.event.ActionListener() {
+                                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                        accountShowPasswordButActionPerformed(evt);
+                                    }
+                                });
+                                passwordPanel.add(accountShowPasswordBut);
+
+                                accountMainPanel.add(passwordPanel);
+
+                                accNumPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+                                accountLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo100x67.png"))); // NOI18N
+                                accountLogo.setAlignmentX(0.5F);
+                                accNumPanel.add(accountLogo);
+
+                                accountMainPanel.add(accNumPanel);
+
+                                accPwPanel.setBackground(new java.awt.Color(255, 255, 255));
+                                accountMainPanel.add(accPwPanel);
+
+                                deletePanel.setBackground(new java.awt.Color(255, 255, 255));
+                                deletePanel.setPreferredSize(new java.awt.Dimension(138, 50));
+                                deletePanel.setLayout(new javax.swing.BoxLayout(deletePanel, javax.swing.BoxLayout.Y_AXIS));
+
+                                deleteButton.setBackground(new java.awt.Color(153, 51, 255));
+                                deleteButton.setFont(new java.awt.Font("UD Digi Kyokasho NK-B", 0, 14)); // NOI18N
+                                deleteButton.setText("Perish account");
+                                deleteButton.setAlignmentX(0.5F);
+                                deleteButton.addActionListener(f ->
+                                    {
+                                        dispose();
+                                        new SignupFrame().setVisible(true);
+                                    });
+                                    deletePanel.add(deleteButton);
+
+                                    accountMainPanel.add(deletePanel);
+
+                                    accountPanel.add(accountMainPanel, java.awt.BorderLayout.CENTER);
+
+                                    rightPurplePanel.setBackground(new java.awt.Color(204, 204, 255));
+                                    rightPurplePanel.setMinimumSize(new java.awt.Dimension(100, 10));
+                                    rightPurplePanel.setPreferredSize(new java.awt.Dimension(100, 10));
+                                    accountPanel.add(rightPurplePanel, java.awt.BorderLayout.LINE_END);
+
+                                    leftPurplePanel.setBackground(new java.awt.Color(204, 204, 255));
+                                    leftPurplePanel.setPreferredSize(new java.awt.Dimension(100, 10));
+                                    accountPanel.add(leftPurplePanel, java.awt.BorderLayout.LINE_START);
+
+                                    designPanel.add(accountPanel, "card7");
+
+                                    menuPanel.add(designPanel, java.awt.BorderLayout.CENTER);
+
+                                    getContentPane().add(menuPanel, java.awt.BorderLayout.CENTER);
+
+                                    pack();
+                                    setLocationRelativeTo(null);
+                                }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_depositButtonActionPerformed
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void accountShowPasswordButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accountShowPasswordButActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_accountShowPasswordButActionPerformed
+
+    private void amountFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_amountFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_amountFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -500,26 +630,28 @@ public class Ewallet_frame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Account_Label_Number;
-    private javax.swing.JLabel Account_Label_Password;
-    private javax.swing.JTextField Deposit_Amount;
-    private javax.swing.JPanel Deposit_Main_Panel;
-    private javax.swing.JPanel Deposit_Top_Border;
-    private javax.swing.JLabel Enter_Amounr_Label;
     private javax.swing.JLabel accDetailsPanel;
+    private javax.swing.JLabel accDetailsPanel1;
+    private javax.swing.JLabel accDetailsPanel2;
     private javax.swing.JLabel accEmailLabel;
-    private javax.swing.JPanel accEmailPanel;
     private javax.swing.JLabel accNameLabel;
     private javax.swing.JPanel accNamePanel;
+    private javax.swing.JPanel accNamePanel1;
     private javax.swing.JPanel accNumPanel;
+    private javax.swing.JLabel accNumberLabel;
+    private javax.swing.JLabel accPasswordLabel;
     private javax.swing.JPanel accPwPanel;
     private javax.swing.JButton accountButton;
     private javax.swing.JButton accountButton1;
+    private javax.swing.JLabel accountLogo;
     private javax.swing.JPanel accountMainPanel;
     private javax.swing.JLabel accountMoney;
     private javax.swing.JLabel accountName;
     private javax.swing.JPanel accountPanel;
+    private javax.swing.JButton accountShowPasswordBut;
     private javax.swing.JPanel accountTopBorder;
+    private javax.swing.JButton actualDepositButton;
+    private javax.swing.JTextField amountField;
     private javax.swing.JPanel buttonUpTop;
     private javax.swing.JPanel buttonsPanel;
     private javax.swing.JLabel cedLabel;
@@ -528,6 +660,12 @@ public class Ewallet_frame extends javax.swing.JFrame {
     private javax.swing.JButton deleteButton;
     private javax.swing.JPanel deletePanel;
     private javax.swing.JButton depositButton;
+    private javax.swing.JPanel depositLeftPurplePanel;
+    private javax.swing.JPanel depositMainLabel;
+    private javax.swing.JPanel depositPanelTitle;
+    private javax.swing.JLabel depositQuestionLabel;
+    private javax.swing.JPanel depositQuestionPanel;
+    private javax.swing.JPanel depositRightPurplePanel;
     private javax.swing.JPanel designPanel;
     private javax.swing.JPanel despositPanel;
     private javax.swing.Box.Filler filler1;
@@ -543,14 +681,21 @@ public class Ewallet_frame extends javax.swing.JFrame {
     private javax.swing.JLabel imageLabel;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel leftPurplePanel;
     private javax.swing.JLabel logoLabel;
     private javax.swing.JPanel menuPanel;
+    private javax.swing.JPanel passwordPanel;
+    private javax.swing.JPanel rightPurplePanel;
     private javax.swing.JLabel robiLabel;
     private javax.swing.JButton transferButton;
+    private javax.swing.JPanel transferLeftPurplePanel;
+    private javax.swing.JPanel transferMainPanel;
     private javax.swing.JPanel transferPanel;
+    private javax.swing.JPanel transferPanelTitle;
+    private javax.swing.JPanel transferRightPurplePanel;
+    private javax.swing.JPanel transfereePanel;
     private javax.swing.JLabel wilLabel;
     // End of variables declaration//GEN-END:variables
     
@@ -581,6 +726,18 @@ public class Ewallet_frame extends javax.swing.JFrame {
         }
     }
     //end of user methods
+    
+    //component getters
+    public javax.swing.JTextField getAmountField()
+    {
+        return amountField;
+    }
+    
+    public javax.swing.JLabel getMoneyLabel()
+    {
+        return accountMoney;
+    } 
+    //end of component getters
 }
 
 class paybuddyAccount
