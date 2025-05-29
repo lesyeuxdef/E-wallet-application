@@ -346,6 +346,7 @@ class paybuddy implements E_walletFunctions
         this.password  = password;
     }
     
+    //getter methods
     public String nameGetter()
     {
         return this.accountName;
@@ -370,6 +371,35 @@ class paybuddy implements E_walletFunctions
     {
         return this.accountMoney;
     }
+    //end of getter methods
+    
+    //setter methods
+    public void nameSetter(String name)
+    {
+        this.accountName = name;
+    }
+    
+    public void emailSetter(String email)
+    {
+        this.email = email;
+    }
+    
+    public void numberSetter(String number)
+    {
+        this.number = number;
+    }
+    
+    public void pwSetter(String pw)
+    {
+        this.password = pw;
+    }
+    
+    public void moneySetter(int money)
+    {
+        this.accountMoney = money;
+    }
+            
+    //end of setter methods
     
     @Override
     public void transfer()
@@ -378,9 +408,10 @@ class paybuddy implements E_walletFunctions
     }
     
     @Override
-    public void deposit()
+    public void deposit(Ewallet_frame f)
     {
-        
+        moneySetter(Integer.parseInt(f.getAmountField().getText()));
+        f.getMoneyLabel().setText(Integer.toString(moneyGetter()));
     }
     
     @Override
