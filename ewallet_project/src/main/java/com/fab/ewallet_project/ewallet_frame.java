@@ -37,11 +37,11 @@ public class Ewallet_frame extends javax.swing.JFrame {
         buttonUpTop = new javax.swing.JPanel();
         logoLabel = new javax.swing.JLabel();
         headerButtonsPanel = new javax.swing.JPanel();
-        filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(32767, 0));
+        filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(60, 0), new java.awt.Dimension(32767, 0));
         accountName = new javax.swing.JLabel();
         filler5 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(32767, 0));
         accountMoney = new javax.swing.JLabel();
-        filler6 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(32767, 0));
+        filler6 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0));
         jButton7 = new javax.swing.JButton();
         filler7 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(32767, 0));
         menuPanel = new javax.swing.JPanel();
@@ -69,6 +69,8 @@ public class Ewallet_frame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Paybuddy");
+        setIconImage(setImageIcon());
 
         buttonUpTop.setBackground(new java.awt.Color(204, 204, 204));
         buttonUpTop.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -92,22 +94,42 @@ public class Ewallet_frame extends javax.swing.JFrame {
         headerButtonsPanel.add(filler4);
 
         accountName.setBackground(new java.awt.Color(102, 0, 0));
-        accountName.setFont(depositButton.getFont());
-        accountName.setText("Hello, " + SignupFrame.userAccount.getPaybuddy().nameGetter() + "!");
+        accountName.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 18)); // NOI18N
+        accountName.setText("accountName");
+        accountName.setAlignmentX(0.5F);
+        if(SignupFrame.userAccount !=null && SignupFrame.userAccount.getPaybuddy() != null)
+        {
+            accountName.setText("Hello, " + SignupFrame.userAccount.getPaybuddy().nameGetter() + "!");
+        }
+        else 
+        {
+            accountName.setText("Hello, Guest!");
+        }
         headerButtonsPanel.add(accountName);
         headerButtonsPanel.add(filler5);
 
         accountMoney.setBackground(new java.awt.Color(102, 0, 0));
-        accountMoney.setFont(depositButton.getFont());
-        accountMoney.setText("- P" + SignupFrame.userAccount.getPaybuddy().moneyGetter()
-        );
+        accountMoney.setFont(accountName.getFont());
+        accountMoney.setText("accountMoney");
+        accountMoney.setAlignmentX(0.5F);
+        accountMoney.setMaximumSize(new java.awt.Dimension(125, 20));
+        accountMoney.setMinimumSize(new java.awt.Dimension(125, 20));
+        accountMoney.setPreferredSize(new java.awt.Dimension(125, 20));
+        if (SignupFrame.userAccount != null && SignupFrame.userAccount.getPaybuddy() != null)
+        {
+            accountMoney.setText("- P" + SignupFrame.userAccount.getPaybuddy().moneyGetter());
+        }
+        else
+        {
+            accountMoney.setText("P 0.00");
+        }
         headerButtonsPanel.add(accountMoney);
         headerButtonsPanel.add(filler6);
 
-        jButton7.setFont(new java.awt.Font("UD Digi Kyokasho NK-R", 0, 14)); // NOI18N
+        jButton7.setFont(new java.awt.Font("UD Digi Kyokasho NK-R", 0, 12)); // NOI18N
         jButton7.setText("Who made PayBuddy?");
         jButton7.setMaximumSize(new java.awt.Dimension(149, 40));
-        jButton7.setPreferredSize(new java.awt.Dimension(200, 30));
+        jButton7.setPreferredSize(new java.awt.Dimension(180, 30));
         headerButtonsPanel.add(jButton7);
         jButton7.addActionListener(e -> {
             if(currentCard.equals("card2"))
@@ -319,18 +341,33 @@ public class Ewallet_frame extends javax.swing.JFrame {
     private String currentCard = "card2";
     //end of my variable declarations
     
+    //user methods
     private String getPreviousCard(String current) {
-    return switch (current) {
+        return switch (current) 
+        {
         case "card4" -> "card2";
         case "card2" -> "card4";
         default -> "card1";
-    };
+        };
+    }
     
-    
+    private Image setImageIcon()
+    {
+        java.net.URL url = getClass().getResource("/main/resources/logo100x67.png");
+        if(url != null)
+        {
+            return new ImageIcon(url).getImage();
+        }
+        else
+        {
+            return null;
+        }
+    }
+    //end of user methods
 }
 
-    static class paybuddyAccount 
-    {
+class paybuddyAccount
+{
         private paybuddy userAccount;
         
         public paybuddyAccount(paybuddy userAccount) 
@@ -342,5 +379,4 @@ public class Ewallet_frame extends javax.swing.JFrame {
         {
             return this.userAccount;
         }
-    }
 }

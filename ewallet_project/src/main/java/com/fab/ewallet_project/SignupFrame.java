@@ -1,6 +1,6 @@
 package com.fab.ewallet_project;
 
-import com.fab.ewallet_project.Ewallet_frame.*;
+import com.fab.ewallet_project.paybuddyAccount.*;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -71,6 +71,7 @@ public class SignupFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SIGN UP ON PAYBUDDY");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMinimumSize(new java.awt.Dimension(621, 400));
         setUndecorated(true);
         setResizable(false);
@@ -145,19 +146,16 @@ public class SignupFrame extends javax.swing.JFrame {
             textPanel.setLayout(new javax.swing.BoxLayout(textPanel, javax.swing.BoxLayout.Y_AXIS));
             textPanel.add(filler10);
 
-            usernameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
             usernameField.setMinimumSize(new java.awt.Dimension(64, 20));
             usernameField.setPreferredSize(new java.awt.Dimension(64, 20));
             textPanel.add(usernameField);
             textPanel.add(filler5);
 
-            emailField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
             emailField.setMinimumSize(new java.awt.Dimension(64, 20));
             emailField.setPreferredSize(new java.awt.Dimension(64, 20));
             textPanel.add(emailField);
             textPanel.add(filler6);
 
-            numberField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
             numberField.setMinimumSize(new java.awt.Dimension(64, 20));
             numberField.setPreferredSize(new java.awt.Dimension(64, 20));
             textPanel.add(numberField);
@@ -182,7 +180,7 @@ public class SignupFrame extends javax.swing.JFrame {
                         showpassBut.setText("Show password?");
                     }
                 });
-                showpassBut.setBackground(new java.awt.Color(153, 153, 255));
+                showpassBut.setBackground(new java.awt.Color(204, 204, 204));
                 showpassBut.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
                 showpassBut.setText("Show password?");
                 showpassBut.setAlignmentX(0.5F);
