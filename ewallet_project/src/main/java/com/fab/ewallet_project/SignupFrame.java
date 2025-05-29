@@ -396,13 +396,13 @@ class paybuddy implements E_walletFunctions
     
     public void moneySetter(int money)
     {
-        this.accountMoney = money;
+        this.accountMoney += money;
     }
             
     //end of setter methods
     
     @Override
-    public void transfer()
+    public void transfer(Ewallet_frame f)
     {
         
     }
@@ -411,12 +411,6 @@ class paybuddy implements E_walletFunctions
     public void deposit(Ewallet_frame f)
     {
         moneySetter(Integer.parseInt(f.getAmountField().getText()));
-        f.getMoneyLabel().setText(Integer.toString(moneyGetter()));
-    }
-    
-    @Override
-    public void account()
-    {
-        
+        f.getMoneyLabel().setText("- P" + Integer.toString(moneyGetter()));
     }
 }
