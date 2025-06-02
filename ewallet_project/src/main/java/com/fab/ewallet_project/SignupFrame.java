@@ -128,7 +128,7 @@ public class SignupFrame extends javax.swing.JFrame {
         infoPanel.add(filler11);
 
         quitButton.setBackground(new java.awt.Color(255, 153, 153));
-        quitButton.setFont(signupButton.getFont());
+        quitButton.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
         quitButton.setText("CANCEL");
         quitButton.setToolTipText("");
         quitButton.setAlignmentX(0.5F);
@@ -196,6 +196,13 @@ public class SignupFrame extends javax.swing.JFrame {
                         {
                             javax.swing.JOptionPane.showMessageDialog(null,"Please fill out all fields!","",javax.swing.JOptionPane.INFORMATION_MESSAGE);
                         }
+                        else if(!numberField.getText().matches("\\d*"))
+                        {
+                            javax.swing.JOptionPane.showMessageDialog(null, "Please enter a valid number!","",javax.swing.JOptionPane.WARNING_MESSAGE);
+                        }
+                        else if(!emailField.getText().matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"))
+                        {
+                            javax.swing.JOptionPane.showMessageDialog(null, "Invalid email!","",javax.swing.JOptionPane.WARNING_MESSAGE);    }
                         else
                         {
                             paybud = new paybuddy(usernameField.getText(),emailField.getText(),numberField.getText(),passwordField.getText());
@@ -417,8 +424,9 @@ class paybuddy implements E_walletFunctions
     }
     
     @Override 
-    public void perish(Ewallet_frame f)
+    public void perish()
     {
-        
+        SignupFrame.userAccount = null;
+        System.gc();
     }
 }
