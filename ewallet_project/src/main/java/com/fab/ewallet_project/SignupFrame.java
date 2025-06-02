@@ -406,13 +406,19 @@ class paybuddy implements E_walletFunctions
     public void transfer(Ewallet_frame f)
     {
         moneySetter(-Integer.parseInt(f.getTransferField().getText()));
-        f.getMoneyLabel().setText("- P" + Integer.toString(moneyGetter()));
+        f.getMoneyLabel().setText("P" + Integer.toString(moneyGetter()));
     }
     
     @Override
     public void deposit(Ewallet_frame f)
     {
         moneySetter(Integer.parseInt(f.getDepositField().getText()));
-        f.getMoneyLabel().setText("- P" + Integer.toString(moneyGetter()));
+        f.getMoneyLabel().setText("P" + Integer.toString(moneyGetter()));
+    }
+    
+    @Override 
+    public void perish(Ewallet_frame f)
+    {
+        
     }
 }
