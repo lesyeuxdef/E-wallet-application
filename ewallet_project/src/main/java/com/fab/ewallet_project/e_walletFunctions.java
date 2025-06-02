@@ -12,4 +12,5 @@ interface E_walletFunctions
 {
     void transfer(Ewallet_frame f);
     void deposit(Ewallet_frame f);
+    void perish();
 }
