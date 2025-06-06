@@ -194,7 +194,7 @@ public class SignupFrame extends javax.swing.JFrame {
                         }
                         else if(!emailField.getText().matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"))
                         {
-                            javax.swing.JOptionPane.showMessageDialog(null, "Invalid email!","",javax.swing.JOptionPane.WARNING_MESSAGE);    
+                            javax.swing.JOptionPane.showMessageDialog(null, "Invalid email!","",javax.swing.JOptionPane.WARNING_MESSAGE);
                         }
                         else if(passwordField.getText().length() < 8)
                         {
@@ -203,7 +203,6 @@ public class SignupFrame extends javax.swing.JFrame {
                         else
                         {
                             paybud = new paybuddy(usernameField.getText(),emailField.getText(),numberField.getText(),passwordField.getText());
-                            userAccount = new paybuddyAccount(paybud);
                             javax.swing.JOptionPane.showMessageDialog(null, "Signed up! Opening menu", "", javax.swing.JOptionPane.INFORMATION_MESSAGE);
 
                             dispose();
@@ -306,28 +305,30 @@ public class SignupFrame extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     // user defined variables
-    static paybuddyAccount userAccount;
-    private paybuddy paybud;
-    private boolean pwVisibility = false;
+    private static paybuddy paybud;
     // end of user defined variables
 
-    // user defined methods
-    void showPassword() {
-        if (!pwVisibility) {
-            pwVisibility = true;
-            passwordField.setEchoChar((char) 0);
-        } else {
-            pwVisibility = false;
-            passwordField.setEchoChar('•');
+    // user defined methods 
+    public static paybuddy getPaybuddyInstance()
+    {
+        if(paybud==null)
+        {
+            return new paybuddy("Guest","Guest@gmail.com","N/A","N/A");
         }
-    };
+        return paybud;
+    }
+    
+    public static void setPaybuddyInstance(paybuddy instance)
+    {
+        paybud = instance;
+    }
     // end of user defined methods
 }
 
 // ROBI AND WIL DIS IS FOR U
 class paybuddy implements E_walletFunctions {
     private String accountName;
-    private int accountMoney;
+    private double accountMoney;
 
     private String email;
     private String number;
@@ -357,7 +358,7 @@ class paybuddy implements E_walletFunctions {
         return this.password;
     }
 
-    public int moneyGetter() {
+    public double moneyGetter() {
         return this.accountMoney;
     }
     // end of getter methods
@@ -386,20 +387,21 @@ class paybuddy implements E_walletFunctions {
     // end of setter methods
 
     @Override
-    public void transfer(Ewallet_frame f) {
-        moneySetter(-Integer.parseInt(f.getTransferField().getText()));
-        f.getMoneyLabel().setText("P" + Integer.toString(moneyGetter()));
+    public void transfer(double amount) {
+        if(amount <= 0) throw new IllegalArgumentException("Amount must be positive!");
+        if(amount > accountMoney) throw new IllegalStateException("Insufficient balance");
+        this.accountMoney -= amount;
     }
 
     @Override
-    public void deposit(Ewallet_frame f) {
-        moneySetter(Integer.parseInt(f.getDepositField().getText()));
-        f.getMoneyLabel().setText("P" + Integer.toString(moneyGetter()));
+    public void deposit(double amount) {
+        if(amount <= 0) throw new IllegalArgumentException("Amount must be positive!");
+        this.accountMoney += amount;
     }
 
     @Override
     public void perish() {
-        SignupFrame.userAccount = null;
+        SignupFrame.setPaybuddyInstance(null);
         System.gc();
     }
 }
