@@ -29,6 +29,7 @@ public class Ewallet_frame extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -166,9 +167,9 @@ public class Ewallet_frame extends javax.swing.JFrame {
         accountName.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 18)); // NOI18N
         accountName.setText("accountName");
         accountName.setAlignmentX(0.5F);
-        if (SignupFrame.userAccount != null && SignupFrame.userAccount.getPaybuddy() != null) {
-            accountName.setText(
-                    "Hello, " + SignupFrame.userAccount.getPaybuddy().nameGetter() + "! You have a balance of: ");
+        if (SignupFrame.getPaybuddyInstance() != null) {
+            accountName
+                    .setText("Hello, " + SignupFrame.getPaybuddyInstance().nameGetter() + "! You have a balance of: ");
         } else {
             accountName.setText("Hello, Guest! You have a balance of:");
         }
@@ -182,8 +183,8 @@ public class Ewallet_frame extends javax.swing.JFrame {
         accountMoney.setMaximumSize(new java.awt.Dimension(125, 20));
         accountMoney.setMinimumSize(new java.awt.Dimension(125, 20));
         accountMoney.setPreferredSize(new java.awt.Dimension(125, 20));
-        if (SignupFrame.userAccount != null && SignupFrame.userAccount.getPaybuddy() != null) {
-            accountMoney.setText("P" + SignupFrame.userAccount.getPaybuddy().moneyGetter());
+        if (SignupFrame.getPaybuddyInstance() != null) {
+            accountMoney.setText("P" + SignupFrame.getPaybuddyInstance().moneyGetter());
         } else {
             accountMoney.setText("P 0.00");
         }
@@ -523,16 +524,16 @@ public class Ewallet_frame extends javax.swing.JFrame {
                 javax.swing.JOptionPane.showMessageDialog(null, "Enter a number please!", "",
                         javax.swing.JOptionPane.INFORMATION_MESSAGE);
                 transferField.setText("");
-            } else if (SignupFrame.userAccount.getPaybuddy().moneyGetter() < Integer
-                    .parseInt(transferField.getText())) {
+            } else if (SignupFrame.getPaybuddyInstance().moneyGetter() < Integer.parseInt(transferField.getText())) {
                 javax.swing.JOptionPane.showMessageDialog(null,
                         "You do not have enough credits in your account to make this transfer!", "",
                         javax.swing.JOptionPane.OK_OPTION);
-            } else if (SignupFrame.userAccount != null && SignupFrame.userAccount.getPaybuddy() != null) {
+            } else if (SignupFrame.getPaybuddyInstance() != null) {
                 javax.swing.JOptionPane.showMessageDialog(null, "Successfully transferred amount!", "",
                         javax.swing.JOptionPane.INFORMATION_MESSAGE);
-                SignupFrame.userAccount.getPaybuddy().transfer(this);
+                SignupFrame.getPaybuddyInstance().transfer(Double.parseDouble(transferField.getText()));
                 transferField.setText("");
+                accountMoney.setText(Double.toString(SignupFrame.getPaybuddyInstance().moneyGetter()));
                 ((CardLayout) designPanel.getLayout()).show(designPanel, "card2");
             } else {
                 javax.swing.JOptionPane.showMessageDialog(null,
@@ -697,11 +698,12 @@ public class Ewallet_frame extends javax.swing.JFrame {
             } else if (!depositField.getText().matches("\\d*")) {
                 javax.swing.JOptionPane.showMessageDialog(null, "Enter a number please!", "",
                         javax.swing.JOptionPane.WARNING_MESSAGE);
-            } else if (SignupFrame.userAccount != null && SignupFrame.userAccount.getPaybuddy() != null) {
+            } else if (SignupFrame.getPaybuddyInstance() != null) {
                 javax.swing.JOptionPane.showMessageDialog(null, "Successfully deposited amount!", "",
                         javax.swing.JOptionPane.INFORMATION_MESSAGE);
-                SignupFrame.userAccount.getPaybuddy().deposit(this);
+                SignupFrame.getPaybuddyInstance().deposit(Double.parseDouble(depositField.getText()));
                 depositField.setText("");
+                accountMoney.setText(Double.toString(SignupFrame.getPaybuddyInstance().moneyGetter()));
                 ((CardLayout) designPanel.getLayout()).show(designPanel, "card2");
             } else {
                 javax.swing.JOptionPane.showMessageDialog(null,
@@ -751,8 +753,8 @@ public class Ewallet_frame extends javax.swing.JFrame {
         accNameLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         accNameLabel.setOpaque(true);
         accNameLabel.setPreferredSize(new java.awt.Dimension(250, 30));
-        if (SignupFrame.userAccount != null && SignupFrame.userAccount.getPaybuddy() != null) {
-            accNameLabel.setText("Account name: " + SignupFrame.userAccount.getPaybuddy().nameGetter());
+        if (SignupFrame.getPaybuddyInstance() != null) {
+            accNameLabel.setText("Account name: " + SignupFrame.getPaybuddyInstance().nameGetter());
         } else {
             accNameLabel.setText("Guest");
         }
@@ -766,8 +768,8 @@ public class Ewallet_frame extends javax.swing.JFrame {
         accEmailLabel.setBorder(accNameLabel.getBorder());
         accEmailLabel.setOpaque(true);
         accEmailLabel.setPreferredSize(new java.awt.Dimension(250, 30));
-        if (SignupFrame.userAccount != null && SignupFrame.userAccount.getPaybuddy() != null) {
-            accEmailLabel.setText("Account Email: " + SignupFrame.userAccount.getPaybuddy().emailGetter());
+        if (SignupFrame.getPaybuddyInstance() != null) {
+            accEmailLabel.setText("Account Email: " + SignupFrame.getPaybuddyInstance().emailGetter());
         } else {
             accEmailLabel.setText("Guest");
         }
@@ -786,8 +788,8 @@ public class Ewallet_frame extends javax.swing.JFrame {
         accNumberLabel.setDoubleBuffered(true);
         accNumberLabel.setOpaque(true);
         accNumberLabel.setPreferredSize(new java.awt.Dimension(250, 30));
-        if (SignupFrame.userAccount != null && SignupFrame.userAccount.getPaybuddy() != null) {
-            accNumberLabel.setText("Account Number: " + SignupFrame.userAccount.getPaybuddy().numberGetter());
+        if (SignupFrame.getPaybuddyInstance() != null) {
+            accNumberLabel.setText("Account Number: " + SignupFrame.getPaybuddyInstance().numberGetter());
         } else {
             accNumberLabel.setText("Guest Number");
         }
@@ -801,7 +803,7 @@ public class Ewallet_frame extends javax.swing.JFrame {
         accPasswordLabel.setBorder(accNameLabel.getBorder());
         accPasswordLabel.setOpaque(true);
         accPasswordLabel.setPreferredSize(new java.awt.Dimension(250, 30));
-        if (SignupFrame.userAccount != null && SignupFrame.userAccount.getPaybuddy() != null) {
+        if (SignupFrame.getPaybuddyInstance() != null) {
             accPasswordLabel.setText("*".repeat(accPasswordLabel.getText().length()));
         } else {
             accPasswordLabel.setText("N/A");
@@ -817,7 +819,7 @@ public class Ewallet_frame extends javax.swing.JFrame {
         accountShowPasswordBut.addActionListener(f -> {
             if (accountShowPasswordBut.getText().equals("Show password?")) {
                 accountShowPasswordBut.setText("Hide password?");
-                accPasswordLabel.setText("Account Password: " + SignupFrame.userAccount.getPaybuddy().pwGetter());
+                accPasswordLabel.setText("Account Password: " + SignupFrame.getPaybuddyInstance().pwGetter());
             } else {
                 accountShowPasswordBut.setText("Show password?");
                 accPasswordLabel.setText("*".repeat(accPasswordLabel.getText().length()));
@@ -847,7 +849,7 @@ public class Ewallet_frame extends javax.swing.JFrame {
         deleteButton.setText("Perish account");
         deleteButton.setAlignmentX(0.5F);
         deleteButton.addActionListener(f -> {
-            SignupFrame.userAccount.getPaybuddy().perish();
+            SignupFrame.getPaybuddyInstance().perish();
             dispose();
             new SignupFrame().setVisible(true);
         });

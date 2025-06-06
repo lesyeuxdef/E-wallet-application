@@ -123,7 +123,7 @@
                 <Property name="alignmentX" type="float" value="0.5"/>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(SignupFrame.userAccount !=null &amp;&amp; SignupFrame.userAccount.getPaybuddy() != null)&#xd;&#xa;{&#xd;&#xa;    accountName.setText(&quot;Hello, &quot; + SignupFrame.userAccount.getPaybuddy().nameGetter() + &quot;! You have a balance of: &quot;);&#xd;&#xa;}&#xd;&#xa;else &#xd;&#xa;{&#xd;&#xa;    accountName.setText(&quot;Hello, Guest! You have a balance of:&quot;);&#xd;&#xa;}"/>
+                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(SignupFrame.getPaybuddyInstance() != null)&#xa;{&#xa;    accountName.setText(&quot;Hello, &quot; + SignupFrame.getPaybuddyInstance().nameGetter() + &quot;! You have a balance of: &quot;);&#xa;}&#xa;else &#xa;{&#xa;    accountName.setText(&quot;Hello, Guest! You have a balance of:&quot;);&#xa;}"/>
               </AuxValues>
             </Component>
             <Component class="javax.swing.Box$Filler" name="filler5">
@@ -160,7 +160,7 @@
                 </Property>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if (SignupFrame.userAccount != null &amp;&amp; SignupFrame.userAccount.getPaybuddy() != null)&#xd;&#xa;{&#xd;&#xa;    accountMoney.setText(&quot;P&quot; + SignupFrame.userAccount.getPaybuddy().moneyGetter());&#xd;&#xa;}&#xd;&#xa;else&#xd;&#xa;{&#xd;&#xa;    accountMoney.setText(&quot;P 0.00&quot;);&#xd;&#xa;}"/>
+                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if (SignupFrame.getPaybuddyInstance() != null)&#xa;{&#xa;    accountMoney.setText(&quot;P&quot; + SignupFrame.getPaybuddyInstance().moneyGetter());&#xa;}&#xa;else&#xa;{&#xa;    accountMoney.setText(&quot;P 0.00&quot;);&#xa;}"/>
               </AuxValues>
             </Component>
             <Component class="javax.swing.Box$Filler" name="filler6">
@@ -678,9 +678,6 @@
                               <Dimension value="[90, 50]"/>
                             </Property>
                           </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TransferNumpad1ActionPerformed"/>
-                          </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="TransferNumpad1.addActionListener(f -&gt;&#xd;&#xa;{&#xd;&#xa;    if(focusField == null)&#xd;&#xa;    {&#xd;&#xa;        return;&#xd;&#xa;    }&#xd;&#xa;    focusField.setText(focusField.getText() + &quot;1&quot;);&#xd;&#xa;});"/>
                           </AuxValues>
@@ -723,9 +720,6 @@
                               <Dimension value="[90, 50]"/>
                             </Property>
                           </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TransferNumpad4ActionPerformed"/>
-                          </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="TransferNumpad4.addActionListener(f -&gt;&#xa;{&#xa;    if(focusField == null)&#xa;    {&#xa;        return;&#xa;    }&#xa;    focusField.setText(focusField.getText() + &quot;4&quot;);&#xa;});"/>
                           </AuxValues>
@@ -768,9 +762,6 @@
                               <Dimension value="[90, 50]"/>
                             </Property>
                           </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TransferNumpad7ActionPerformed"/>
-                          </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="TransferNumpad7.addActionListener(f -&gt;&#xd;&#xa;{&#xd;&#xa;    if(focusField == null)&#xd;&#xa;    {&#xd;&#xa;        return;&#xd;&#xa;    }&#xd;&#xa;    focusField.setText(focusField.getText() + &quot;7&quot;);&#xd;&#xa;});"/>
                           </AuxValues>
@@ -843,7 +834,7 @@
                             </Property>
                           </Properties>
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="TransferNumpadTransfer.addActionListener(f -&gt;&#xd;&#xa;{&#xd;&#xa;    if(transferField.getText().equals(&quot;&quot;))&#xd;&#xa;    {&#xd;&#xa;        javax.swing.JOptionPane.showMessageDialog(null,&quot;Please enter an amount!&quot;,&quot;&quot;,javax.swing.JOptionPane.INFORMATION_MESSAGE);&#xd;&#xa;    }&#xd;&#xa;    else if(!transferField.getText().matches(&quot;\\d*&quot;))&#xd;&#xa;    {&#xd;&#xa;        javax.swing.JOptionPane.showMessageDialog(null,&quot;Enter a number please!&quot;,&quot;&quot;,javax.swing.JOptionPane.INFORMATION_MESSAGE);&#xd;&#xa;        transferField.setText(&quot;&quot;);&#xd;&#xa;    }&#xd;&#xa;    else if(SignupFrame.userAccount.getPaybuddy().moneyGetter() &lt; Integer.parseInt(transferField.getText()))&#xd;&#xa;    {&#xd;&#xa;        javax.swing.JOptionPane.showMessageDialog(null,&quot;You do not have enough credits in your account to make this transfer!&quot;,&quot;&quot;,javax.swing.JOptionPane.OK_OPTION);&#xd;&#xa;    }&#xd;&#xa;    else if(SignupFrame.userAccount != null &amp;&amp; SignupFrame.userAccount.getPaybuddy() != null)&#xd;&#xa;    {   &#xd;&#xa;        javax.swing.JOptionPane.showMessageDialog(null,&quot;Successfully transferred amount!&quot;,&quot;&quot;,javax.swing.JOptionPane.INFORMATION_MESSAGE);&#xd;&#xa;        SignupFrame.userAccount.getPaybuddy().transfer(this);&#xd;&#xa;        transferField.setText(&quot;&quot;);&#xd;&#xa;        ((CardLayout)designPanel.getLayout()).show(designPanel, &quot;card2&quot;);&#xd;&#xa;    }&#xd;&#xa;    else&#xd;&#xa;    {&#xd;&#xa;        javax.swing.JOptionPane.showMessageDialog(null,&quot;cuh this doesn&apos;t work if since SignupFrame.java is what creates the account object that this frame uses for everyting :skull:&quot;,&quot;&quot;,javax.swing.JOptionPane.INFORMATION_MESSAGE);&#xd;&#xa;    }&#xd;&#xa;});"/>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="TransferNumpadTransfer.addActionListener(f -&gt;&#xa;{&#xa;    if(transferField.getText().equals(&quot;&quot;))&#xa;    {&#xa;        javax.swing.JOptionPane.showMessageDialog(null,&quot;Please enter an amount!&quot;,&quot;&quot;,javax.swing.JOptionPane.INFORMATION_MESSAGE);&#xa;    }&#xa;    else if(!transferField.getText().matches(&quot;\\d*&quot;))&#xa;    {&#xa;        javax.swing.JOptionPane.showMessageDialog(null,&quot;Enter a number please!&quot;,&quot;&quot;,javax.swing.JOptionPane.INFORMATION_MESSAGE);&#xa;        transferField.setText(&quot;&quot;);&#xa;    }&#xa;    else if(SignupFrame.getPaybuddyInstance().moneyGetter() &lt; Integer.parseInt(transferField.getText()))&#xa;    {&#xa;        javax.swing.JOptionPane.showMessageDialog(null,&quot;You do not have enough credits in your account to make this transfer!&quot;,&quot;&quot;,javax.swing.JOptionPane.OK_OPTION);&#xa;    }&#xa;    else if(SignupFrame.getPaybuddyInstance() != null)&#xa;    {   &#xa;        javax.swing.JOptionPane.showMessageDialog(null,&quot;Successfully transferred amount!&quot;,&quot;&quot;,javax.swing.JOptionPane.INFORMATION_MESSAGE);&#xa;        SignupFrame.getPaybuddyInstance().transfer(Double.parseDouble(transferField.getText()));&#xa;        transferField.setText(&quot;&quot;);&#xa;        accountMoney.setText(Double.toString(SignupFrame.getPaybuddyInstance().moneyGetter()));&#xa;        ((CardLayout)designPanel.getLayout()).show(designPanel, &quot;card2&quot;);&#xa;    }&#xa;    else&#xa;    {&#xa;        javax.swing.JOptionPane.showMessageDialog(null,&quot;cuh this doesn&apos;t work if since SignupFrame.java is what creates the account object that this frame uses for everyting :skull:&quot;,&quot;&quot;,javax.swing.JOptionPane.INFORMATION_MESSAGE);&#xa;    }&#xa;});"/>
                           </AuxValues>
                         </Component>
                       </SubComponents>
@@ -1028,9 +1019,6 @@
                               <Dimension value="[90, 50]"/>
                             </Property>
                           </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="numpad1ActionPerformed"/>
-                          </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="numpad1.addActionListener(f -&gt;&#xd;&#xa;{&#xd;&#xa;    depositField.setText(depositField.getText() + &quot;1&quot;);&#xd;&#xa;});"/>
                           </AuxValues>
@@ -1115,9 +1103,6 @@
                               <Dimension value="[90, 50]"/>
                             </Property>
                           </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="numpad7ActionPerformed"/>
-                          </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="numpad7.addActionListener(f -&gt;&#xd;&#xa;{&#xd;&#xa;    depositField.setText(depositField.getText() + &quot;7&quot;);&#xd;&#xa;});"/>
                           </AuxValues>
@@ -1190,7 +1175,7 @@
                             </Property>
                           </Properties>
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="numpadDeposit.addActionListener(f -&gt;&#xa;{&#xa;    if(depositField.getText().equals(&quot;&quot;))&#xa;    {&#xa;        javax.swing.JOptionPane.showMessageDialog(null,&quot;Please enter an amount!&quot;,&quot;&quot;,javax.swing.JOptionPane.WARNING_MESSAGE);&#xa;    }&#xa;    else if(!depositField.getText().matches(&quot;\\d*&quot;))&#xa;    {&#xa;        javax.swing.JOptionPane.showMessageDialog(null,&quot;Enter a number please!&quot;,&quot;&quot;,javax.swing.JOptionPane.WARNING_MESSAGE);&#xa;    }&#xa;    else if(SignupFrame.userAccount != null &amp;&amp; SignupFrame.userAccount.getPaybuddy() != null)&#xa;    {   &#xa;        javax.swing.JOptionPane.showMessageDialog(null,&quot;Successfully deposited amount!&quot;,&quot;&quot;,javax.swing.JOptionPane.INFORMATION_MESSAGE);&#xa;        SignupFrame.userAccount.getPaybuddy().deposit(this);&#xa;        depositField.setText(&quot;&quot;);&#xa;        ((CardLayout)designPanel.getLayout()).show(designPanel, &quot;card2&quot;);&#xa;    }&#xa;    else&#xa;    {&#xa;        javax.swing.JOptionPane.showMessageDialog(null,&quot;cuh this doesn&apos;t work if since SignupFrame.java is what creates the account object that this frame uses for everyting :skull:&quot;,&quot;&quot;,javax.swing.JOptionPane.WARNING_MESSAGE);&#xa;    }&#xa;});"/>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="numpadDeposit.addActionListener(f -&gt;&#xa;{&#xa;    if(depositField.getText().equals(&quot;&quot;))&#xa;    {&#xa;        javax.swing.JOptionPane.showMessageDialog(null,&quot;Please enter an amount!&quot;,&quot;&quot;,javax.swing.JOptionPane.WARNING_MESSAGE);&#xa;    }&#xa;    else if(!depositField.getText().matches(&quot;\\d*&quot;))&#xa;    {&#xa;        javax.swing.JOptionPane.showMessageDialog(null,&quot;Enter a number please!&quot;,&quot;&quot;,javax.swing.JOptionPane.WARNING_MESSAGE);&#xa;    }&#xa;    else if(SignupFrame.getPaybuddyInstance() != null)&#xa;    {   &#xa;        javax.swing.JOptionPane.showMessageDialog(null,&quot;Successfully deposited amount!&quot;,&quot;&quot;,javax.swing.JOptionPane.INFORMATION_MESSAGE);&#xa;        SignupFrame.getPaybuddyInstance().deposit(Double.parseDouble(depositField.getText()));&#xa;        depositField.setText(&quot;&quot;);&#xa;        accountMoney.setText(Double.toString(SignupFrame.getPaybuddyInstance().moneyGetter()));&#xa;        ((CardLayout)designPanel.getLayout()).show(designPanel, &quot;card2&quot;);&#xa;    }&#xa;    else&#xa;    {&#xa;        javax.swing.JOptionPane.showMessageDialog(null,&quot;cuh this doesn&apos;t work if since SignupFrame.java is what creates the account object that this frame uses for everyting :skull:&quot;,&quot;&quot;,javax.swing.JOptionPane.WARNING_MESSAGE);&#xa;    }&#xa;});"/>
                           </AuxValues>
                         </Component>
                       </SubComponents>
@@ -1312,7 +1297,7 @@
                             </Property>
                           </Properties>
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(SignupFrame.userAccount != null &amp;&amp; SignupFrame.userAccount.getPaybuddy() != null) &#xd;&#xa;{&#xd;&#xa;accNameLabel.setText(&quot;Account name: &quot; + SignupFrame.userAccount.getPaybuddy().nameGetter());&#xd;&#xa;}&#xd;&#xa;else&#xd;&#xa;{&#xd;&#xa;    accNameLabel.setText(&quot;Guest&quot;);&#xd;&#xa;}"/>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(SignupFrame.getPaybuddyInstance() != null) &#xa;{&#xa;accNameLabel.setText(&quot;Account name: &quot; + SignupFrame.getPaybuddyInstance().nameGetter());&#xa;}&#xa;else&#xa;{&#xa;    accNameLabel.setText(&quot;Guest&quot;);&#xa;}"/>
                           </AuxValues>
                         </Component>
                         <Component class="javax.swing.JLabel" name="accEmailLabel">
@@ -1335,7 +1320,7 @@
                             </Property>
                           </Properties>
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(SignupFrame.userAccount != null &amp;&amp; SignupFrame.userAccount.getPaybuddy() != null) &#xa;{&#xa;accEmailLabel.setText(&quot;Account Email: &quot; + SignupFrame.userAccount.getPaybuddy().emailGetter());&#xa;}&#xa;else&#xa;{&#xa;    accEmailLabel.setText(&quot;Guest&quot;);&#xa;}"/>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(SignupFrame.getPaybuddyInstance() != null) &#xa;{&#xa;    accEmailLabel.setText(&quot;Account Email: &quot; + SignupFrame.getPaybuddyInstance().emailGetter());&#xa;}&#xa;else&#xa;{&#xa;    accEmailLabel.setText(&quot;Guest&quot;);&#xa;}"/>
                           </AuxValues>
                         </Component>
                       </SubComponents>
@@ -1370,7 +1355,7 @@
                             </Property>
                           </Properties>
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(SignupFrame.userAccount != null &amp;&amp; SignupFrame.userAccount.getPaybuddy() != null) &#xa;{&#xa;accNumberLabel.setText(&quot;Account Number: &quot; + SignupFrame.userAccount.getPaybuddy().numberGetter());&#xa;}&#xa;else&#xa;{&#xa;    accNumberLabel.setText(&quot;Guest Number&quot;);&#xa;}"/>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(SignupFrame.getPaybuddyInstance() != null) &#xa;{&#xa;accNumberLabel.setText(&quot;Account Number: &quot; + SignupFrame.getPaybuddyInstance().numberGetter());&#xa;}&#xa;else&#xa;{&#xa;    accNumberLabel.setText(&quot;Guest Number&quot;);&#xa;}"/>
                           </AuxValues>
                         </Component>
                         <Component class="javax.swing.JLabel" name="accPasswordLabel">
@@ -1393,7 +1378,7 @@
                             </Property>
                           </Properties>
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(SignupFrame.userAccount != null &amp;&amp; SignupFrame.userAccount.getPaybuddy() != null) &#xa;{&#xa;accPasswordLabel.setText(&quot;*&quot;.repeat(accPasswordLabel.getText().length()));&#xa;}&#xa;else&#xa;{&#xa;    accPasswordLabel.setText(&quot;N/A&quot;);&#xa;}"/>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(SignupFrame.getPaybuddyInstance() != null) &#xa;{&#xa;accPasswordLabel.setText(&quot;*&quot;.repeat(accPasswordLabel.getText().length()));&#xa;}&#xa;else&#xa;{&#xa;    accPasswordLabel.setText(&quot;N/A&quot;);&#xa;}"/>
                           </AuxValues>
                         </Component>
                       </SubComponents>
@@ -1414,11 +1399,8 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Show password?"/>
                           </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="accountShowPasswordButActionPerformed"/>
-                          </Events>
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="accountShowPasswordBut.addActionListener(f -&gt;&#xd;&#xa;{&#xd;&#xa;    if(accountShowPasswordBut.getText().equals(&quot;Show password?&quot;))&#xd;&#xa;    {&#xd;&#xa;        accountShowPasswordBut.setText(&quot;Hide password?&quot;);&#xd;&#xa;        accPasswordLabel.setText(&quot;Account Password: &quot; + SignupFrame.userAccount.getPaybuddy().pwGetter());&#xd;&#xa;    }&#xd;&#xa;    else&#xd;&#xa;    {&#xd;&#xa;        accountShowPasswordBut.setText(&quot;Show password?&quot;);&#xd;&#xa;        accPasswordLabel.setText(&quot;*&quot;.repeat(accPasswordLabel.getText().length()));&#xd;&#xa;    }&#xd;&#xa;});"/>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="accountShowPasswordBut.addActionListener(f -&gt;&#xa;{&#xa;    if(accountShowPasswordBut.getText().equals(&quot;Show password?&quot;))&#xa;    {&#xa;        accountShowPasswordBut.setText(&quot;Hide password?&quot;);&#xa;        accPasswordLabel.setText(&quot;Account Password: &quot; + SignupFrame.getPaybuddyInstance().pwGetter());&#xa;    }&#xa;    else&#xa;    {&#xa;        accountShowPasswordBut.setText(&quot;Show password?&quot;);&#xa;        accPasswordLabel.setText(&quot;*&quot;.repeat(accPasswordLabel.getText().length()));&#xa;    }&#xa;});"/>
                           </AuxValues>
                         </Component>
                       </SubComponents>
@@ -1477,7 +1459,7 @@
                             <Property name="alignmentX" type="float" value="0.5"/>
                           </Properties>
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="deleteButton.addActionListener(f -&gt;&#xd;&#xa;{&#xd;&#xa;    SignupFrame.userAccount.getPaybuddy().perish();&#xd;&#xa;    dispose();&#xd;&#xa;    new SignupFrame().setVisible(true);&#xd;&#xa;});&#xd;&#xa;"/>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="deleteButton.addActionListener(f -&gt;&#xa;{&#xa;    SignupFrame.getPaybuddyInstance().perish();&#xa;    dispose();&#xa;    new SignupFrame().setVisible(true);&#xa;});"/>
                           </AuxValues>
                         </Component>
                       </SubComponents>

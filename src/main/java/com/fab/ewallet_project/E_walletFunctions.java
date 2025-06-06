@@ -10,7 +10,7 @@ package com.fab.ewallet_project;
  */
 interface E_walletFunctions
 {
-    void transfer(Ewallet_frame f);
-    void deposit(Ewallet_frame f);
+    void transfer(double amount);
+    void deposit(double amount);
     void perish();
 }
