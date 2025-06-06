@@ -26,7 +26,7 @@ public class SignupFrame extends javax.swing.JFrame {
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jCheckBox1 = new javax.swing.JCheckBox();
@@ -36,44 +36,31 @@ public class SignupFrame extends javax.swing.JFrame {
         signupLabel = new javax.swing.JLabel();
         signupPanel2 = new javax.swing.JPanel();
         infoPanel = new javax.swing.JPanel();
-        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 1),
-                new java.awt.Dimension(0, 15));
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 1), new java.awt.Dimension(0, 15));
         usernameLabel = new javax.swing.JLabel();
-        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 1),
-                new java.awt.Dimension(0, 50));
+        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 1), new java.awt.Dimension(0, 50));
         emailLabel = new javax.swing.JLabel();
-        filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 1),
-                new java.awt.Dimension(0, 50));
+        filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 1), new java.awt.Dimension(0, 50));
         phonenumLabel = new javax.swing.JLabel();
-        filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 1),
-                new java.awt.Dimension(0, 50));
+        filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 1), new java.awt.Dimension(0, 50));
         passwordLabel = new javax.swing.JLabel();
-        filler11 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 1),
-                new java.awt.Dimension(0, 90));
+        filler11 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 1), new java.awt.Dimension(0, 90));
         quitButton = new javax.swing.JButton();
-        filler12 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 1),
-                new java.awt.Dimension(0, 10));
+        filler12 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 1), new java.awt.Dimension(0, 10));
         textPanel = new javax.swing.JPanel();
-        filler10 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 10),
-                new java.awt.Dimension(0, 20));
+        filler10 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 20));
         usernameField = new javax.swing.JTextField();
-        filler5 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 20),
-                new java.awt.Dimension(0, 20));
+        filler5 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 20), new java.awt.Dimension(0, 20));
         emailField = new javax.swing.JTextField();
-        filler6 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 20),
-                new java.awt.Dimension(0, 20));
+        filler6 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 20), new java.awt.Dimension(0, 20));
         numberField = new javax.swing.JTextField();
-        filler7 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 20),
-                new java.awt.Dimension(0, 20));
+        filler7 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 20), new java.awt.Dimension(0, 20));
         passwordField = new javax.swing.JPasswordField();
-        filler8 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 30),
-                new java.awt.Dimension(0, 20));
+        filler8 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 30), new java.awt.Dimension(0, 20));
         javax.swing.JButton showpassBut = new javax.swing.JButton();
-        filler13 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 10),
-                new java.awt.Dimension(0, 20));
+        filler13 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 20));
         javax.swing.JButton signupButton = new javax.swing.JButton();
-        filler9 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 10),
-                new java.awt.Dimension(0, 20));
+        filler9 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 20));
 
         jCheckBox1.setText("jCheckBox1");
 
@@ -143,92 +130,103 @@ public class SignupFrame extends javax.swing.JFrame {
         quitButton.setToolTipText("");
         quitButton.setAlignmentX(0.5F);
         infoPanel.add(quitButton);
-        quitButton.addActionListener(e -> {
-            System.exit(0);
-        });
-        infoPanel.add(filler12);
+        quitButton.addActionListener(e ->
+            {
+                System.exit(0);
+            });
+            infoPanel.add(filler12);
 
-        signupPanel2.add(infoPanel);
+            signupPanel2.add(infoPanel);
 
-        textPanel.setLayout(new javax.swing.BoxLayout(textPanel, javax.swing.BoxLayout.Y_AXIS));
-        textPanel.add(filler10);
+            textPanel.setLayout(new javax.swing.BoxLayout(textPanel, javax.swing.BoxLayout.Y_AXIS));
+            textPanel.add(filler10);
 
-        usernameField.setMinimumSize(new java.awt.Dimension(64, 20));
-        usernameField.setPreferredSize(new java.awt.Dimension(64, 20));
-        textPanel.add(usernameField);
-        textPanel.add(filler5);
+            usernameField.setMinimumSize(new java.awt.Dimension(64, 20));
+            usernameField.setPreferredSize(new java.awt.Dimension(64, 20));
+            textPanel.add(usernameField);
+            textPanel.add(filler5);
 
-        emailField.setMinimumSize(new java.awt.Dimension(64, 20));
-        emailField.setPreferredSize(new java.awt.Dimension(64, 20));
-        textPanel.add(emailField);
-        textPanel.add(filler6);
+            emailField.setMinimumSize(new java.awt.Dimension(64, 20));
+            emailField.setPreferredSize(new java.awt.Dimension(64, 20));
+            textPanel.add(emailField);
+            textPanel.add(filler6);
 
-        numberField.setMinimumSize(new java.awt.Dimension(64, 20));
-        numberField.setPreferredSize(new java.awt.Dimension(64, 20));
-        textPanel.add(numberField);
-        textPanel.add(filler7);
+            numberField.setMinimumSize(new java.awt.Dimension(64, 20));
+            numberField.setPreferredSize(new java.awt.Dimension(64, 20));
+            textPanel.add(numberField);
+            textPanel.add(filler7);
 
-        passwordField.setEchoChar('•');
-        passwordField.setMinimumSize(new java.awt.Dimension(64, 20));
-        passwordField.setPreferredSize(new java.awt.Dimension(64, 20));
-        textPanel.add(passwordField);
-        textPanel.add(filler8);
+            passwordField.setEchoChar('•');
+            passwordField.setMinimumSize(new java.awt.Dimension(64, 20));
+            passwordField.setPreferredSize(new java.awt.Dimension(64, 20));
+            textPanel.add(passwordField);
+            textPanel.add(filler8);
 
-        showpassBut.addActionListener(f -> {
-            if (showpassBut.getText().equals("Show password?")) {
-                passwordField.setEchoChar((char) 0);
-                showpassBut.setText("Hide password?");
-            } else {
-                passwordField.setEchoChar('•');
+            showpassBut.addActionListener(f ->
+                {
+                    if(showpassBut.getText().equals("Show password?"))
+                    {
+                        passwordField.setEchoChar((char)0);
+                        showpassBut.setText("Hide password?");
+                    }
+                    else
+                    {
+                        passwordField.setEchoChar('•');
+                        showpassBut.setText("Show password?");
+                    }
+                });
+                showpassBut.setBackground(new java.awt.Color(204, 204, 204));
+                showpassBut.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
                 showpassBut.setText("Show password?");
-            }
-        });
-        showpassBut.setBackground(new java.awt.Color(204, 204, 204));
-        showpassBut.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        showpassBut.setText("Show password?");
-        showpassBut.setAlignmentX(0.5F);
-        textPanel.add(showpassBut);
-        textPanel.add(filler13);
+                showpassBut.setAlignmentX(0.5F);
+                textPanel.add(showpassBut);
+                textPanel.add(filler13);
 
-        signupButton.addActionListener(f -> {
-            if (usernameField.getText().equals("") && emailField.getText().equals("")
-                    && numberField.getText().equals("") && passwordField.getText().equals("")) {
-                javax.swing.JOptionPane.showMessageDialog(null, "Please fill out all fields!", "",
-                        javax.swing.JOptionPane.INFORMATION_MESSAGE);
-            } else if (!numberField.getText().matches("\\d*")) {
-                javax.swing.JOptionPane.showMessageDialog(null, "Please enter a valid number!", "",
-                        javax.swing.JOptionPane.WARNING_MESSAGE);
-            } else if (!emailField.getText().matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}")) {
-                javax.swing.JOptionPane.showMessageDialog(null, "Invalid email!", "",
-                        javax.swing.JOptionPane.WARNING_MESSAGE);
-            } else {
-                paybud = new paybuddy(usernameField.getText(), emailField.getText(), numberField.getText(),
-                        passwordField.getText());
-                userAccount = new paybuddyAccount(paybud);
-                javax.swing.JOptionPane.showMessageDialog(null, "Signed up! Opening menu", "",
-                        javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                signupButton.addActionListener(f ->
+                    {
+                        if(usernameField.getText().equals("") || emailField.getText().equals("") || numberField.getText().equals("") || passwordField.getText().equals(""))
+                        {
+                            javax.swing.JOptionPane.showMessageDialog(null,"Please fill out all fields!","",javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                        }
+                        else if(!numberField.getText().matches("\\d*") || numberField.getText().length() < 9)
+                        {
+                            javax.swing.JOptionPane.showMessageDialog(null, "Please enter a valid number! 11 digits or more required","",javax.swing.JOptionPane.WARNING_MESSAGE);
+                        }
+                        else if(!emailField.getText().matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"))
+                        {
+                            javax.swing.JOptionPane.showMessageDialog(null, "Invalid email!","",javax.swing.JOptionPane.WARNING_MESSAGE);    
+                        }
+                        else if(passwordField.getText().length() < 8)
+                        {
+                            javax.swing.JOptionPane.showMessageDialog(null, "atleast think of a longer password! 8 characters or more!","",javax.swing.JOptionPane.WARNING_MESSAGE);
+                        }
+                        else
+                        {
+                            paybud = new paybuddy(usernameField.getText(),emailField.getText(),numberField.getText(),passwordField.getText());
+                            userAccount = new paybuddyAccount(paybud);
+                            javax.swing.JOptionPane.showMessageDialog(null, "Signed up! Opening menu", "", javax.swing.JOptionPane.INFORMATION_MESSAGE);
 
-                dispose();
+                            dispose();
 
-                new Ewallet_frame().setVisible(true);
-            }
-        });
-        signupButton.setBackground(new java.awt.Color(153, 153, 255));
-        signupButton.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
-        signupButton.setText("SIGN UP");
-        signupButton.setAlignmentX(0.5F);
-        textPanel.add(signupButton);
-        textPanel.add(filler9);
+                            new Ewallet_frame().setVisible(true);
+                        }
+                    });
+                    signupButton.setBackground(new java.awt.Color(153, 153, 255));
+                    signupButton.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
+                    signupButton.setText("SIGN UP");
+                    signupButton.setAlignmentX(0.5F);
+                    textPanel.add(signupButton);
+                    textPanel.add(filler9);
 
-        signupPanel2.add(textPanel);
+                    signupPanel2.add(textPanel);
 
-        signupPanel.add(signupPanel2, java.awt.BorderLayout.CENTER);
+                    signupPanel.add(signupPanel2, java.awt.BorderLayout.CENTER);
 
-        getContentPane().add(signupPanel, java.awt.BorderLayout.CENTER);
+                    getContentPane().add(signupPanel, java.awt.BorderLayout.CENTER);
 
-        setSize(new java.awt.Dimension(621, 400));
-        setLocationRelativeTo(null);
-    }// </editor-fold>//GEN-END:initComponents
+                    setSize(new java.awt.Dimension(621, 400));
+                    setLocationRelativeTo(null);
+                }// </editor-fold>//GEN-END:initComponents
 
     /**
      * @param args the command line arguments
