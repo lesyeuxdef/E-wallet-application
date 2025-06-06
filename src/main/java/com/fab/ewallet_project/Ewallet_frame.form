@@ -22,7 +22,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-118,0,0,4,14"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-94,0,0,4,44"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
@@ -678,9 +678,6 @@
                               <Dimension value="[90, 50]"/>
                             </Property>
                           </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TransferNumpad1ActionPerformed"/>
-                          </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="TransferNumpad1.addActionListener(f -&gt;&#xd;&#xa;{&#xd;&#xa;    if(focusField == null)&#xd;&#xa;    {&#xd;&#xa;        return;&#xd;&#xa;    }&#xd;&#xa;    focusField.setText(focusField.getText() + &quot;1&quot;);&#xd;&#xa;});"/>
                           </AuxValues>
@@ -723,9 +720,6 @@
                               <Dimension value="[90, 50]"/>
                             </Property>
                           </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TransferNumpad4ActionPerformed"/>
-                          </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="TransferNumpad4.addActionListener(f -&gt;&#xa;{&#xa;    if(focusField == null)&#xa;    {&#xa;        return;&#xa;    }&#xa;    focusField.setText(focusField.getText() + &quot;4&quot;);&#xa;});"/>
                           </AuxValues>
@@ -768,9 +762,6 @@
                               <Dimension value="[90, 50]"/>
                             </Property>
                           </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TransferNumpad7ActionPerformed"/>
-                          </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="TransferNumpad7.addActionListener(f -&gt;&#xd;&#xa;{&#xd;&#xa;    if(focusField == null)&#xd;&#xa;    {&#xd;&#xa;        return;&#xd;&#xa;    }&#xd;&#xa;    focusField.setText(focusField.getText() + &quot;7&quot;);&#xd;&#xa;});"/>
                           </AuxValues>
@@ -1028,9 +1019,6 @@
                               <Dimension value="[90, 50]"/>
                             </Property>
                           </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="numpad1ActionPerformed"/>
-                          </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="numpad1.addActionListener(f -&gt;&#xd;&#xa;{&#xd;&#xa;    depositField.setText(depositField.getText() + &quot;1&quot;);&#xd;&#xa;});"/>
                           </AuxValues>
@@ -1115,9 +1103,6 @@
                               <Dimension value="[90, 50]"/>
                             </Property>
                           </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="numpad7ActionPerformed"/>
-                          </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="numpad7.addActionListener(f -&gt;&#xd;&#xa;{&#xd;&#xa;    depositField.setText(depositField.getText() + &quot;7&quot;);&#xd;&#xa;});"/>
                           </AuxValues>
@@ -1308,7 +1293,7 @@
                             <Property name="horizontalTextPosition" type="int" value="0"/>
                             <Property name="opaque" type="boolean" value="true"/>
                             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                              <Dimension value="[250, 30]"/>
+                              <Dimension value="[270, 40]"/>
                             </Property>
                           </Properties>
                           <AuxValues>
@@ -1331,7 +1316,7 @@
                             </Property>
                             <Property name="opaque" type="boolean" value="true"/>
                             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                              <Dimension value="[250, 30]"/>
+                              <Dimension value="[270, 40]"/>
                             </Property>
                           </Properties>
                           <AuxValues>
@@ -1366,7 +1351,7 @@
                             <Property name="doubleBuffered" type="boolean" value="true"/>
                             <Property name="opaque" type="boolean" value="true"/>
                             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                              <Dimension value="[250, 30]"/>
+                              <Dimension value="[270, 40]"/>
                             </Property>
                           </Properties>
                           <AuxValues>
@@ -1389,7 +1374,7 @@
                             </Property>
                             <Property name="opaque" type="boolean" value="true"/>
                             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                              <Dimension value="[250, 30]"/>
+                              <Dimension value="[270, 40]"/>
                             </Property>
                           </Properties>
                           <AuxValues>
@@ -1414,9 +1399,6 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Show password?"/>
                           </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="accountShowPasswordButActionPerformed"/>
-                          </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="accountShowPasswordBut.addActionListener(f -&gt;&#xd;&#xa;{&#xd;&#xa;    if(accountShowPasswordBut.getText().equals(&quot;Show password?&quot;))&#xd;&#xa;    {&#xd;&#xa;        accountShowPasswordBut.setText(&quot;Hide password?&quot;);&#xd;&#xa;        accPasswordLabel.setText(&quot;Account Password: &quot; + SignupFrame.userAccount.getPaybuddy().pwGetter());&#xd;&#xa;    }&#xd;&#xa;    else&#xd;&#xa;    {&#xd;&#xa;        accountShowPasswordBut.setText(&quot;Show password?&quot;);&#xd;&#xa;        accPasswordLabel.setText(&quot;*&quot;.repeat(accPasswordLabel.getText().length()));&#xd;&#xa;    }&#xd;&#xa;});"/>
                           </AuxValues>
